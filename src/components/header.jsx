@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <>
       <Navbar
-        fixed="top"
+        // fixed="top"
         collapseOnSelect
         expand="md"
         bg="light"
@@ -26,7 +26,7 @@ const Header = () => {
           <Navbar.Brand href={'/'}>
             <span>ETHIC</span>
           </Navbar.Brand>
-          <div>
+          <div className="text-uppercase">
             <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="justify-content-end">
