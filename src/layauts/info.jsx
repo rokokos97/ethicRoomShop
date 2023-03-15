@@ -3,20 +3,23 @@ import AccordionBox from '../components/accordionBox';
 
 const Info = () => {
   return (
-    <div className="text-center">
-      <h1>
+    <div className="text-center w-75 mx-auto">
+      <h1 className="m-5">
         PAYMENT AND DELIVERY
       </h1>
-      <p className="text-lm">
+      <p>
         Is it necessary to choose a model or to expand?
       </p>
       <p>
-        Phone for tel. +380937730930,
-        or write to us at
-        <a className="link-dark" href="mailto:Ethickyiv@gmail.com">
+        Phone for tel. +380937730930, or write to us at <a
+          className="link-dark"
+          href="mailto:Ethickyiv@gmail.com"
+        >
         Ethickyiv@gmail.com</a>
       </p>
-      <AccordionBox/>
+      <div className="mt-3">
+        <AccordionBox/>
+      </div>
     </div>
   );
 };
