@@ -1,6 +1,7 @@
 import React from 'react';
 import CarouselBox from '../components/carouselBox';
 import ItemsListPage from '../components/itemsListPage';
+import Footter from '../components/footter';
 
 
 const Main = () => {
@@ -8,6 +9,7 @@ const Main = () => {
     <div>
       <CarouselBox/>
       <ItemsListPage/>
+      <Footter/>
     </div>
   );
 };
