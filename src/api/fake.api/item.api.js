@@ -16,6 +16,7 @@ const items = [
     composition: ['Сotton: 95%', 'Elastane: 5%'],
   },
   {
+    _id: '67rdca3eeb7f6fgeed471817',
     name: 'High tiger',
     price: 980,
     imgURL: ['/'],
@@ -23,6 +24,7 @@ const items = [
     composition: ['Сotton: 95%', 'Elastane: 5%'],
   },
   {
+    _id: '67rdca3eeb7f6fgeed471818',
     name: 'High tiger',
     price: 980,
     imgURL: ['/'],
@@ -30,6 +32,7 @@ const items = [
     composition: ['Сotton: 95%', 'Elastane: 5%'],
   },
   {
+    _id: '67rdca3eeb7f6fgeed471819',
     name: 'High tiger',
     price: 980,
     imgURL: ['/'],
@@ -37,6 +40,7 @@ const items = [
     composition: ['Сotton: 95%', 'Elastane: 5%'],
   },
   {
+    _id: '67rdca3eeb7f6fgeed471820',
     name: 'High tiger',
     price: 980,
     imgURL: ['/'],
@@ -44,6 +48,7 @@ const items = [
     composition: ['Сotton: 95%', 'Elastane: 5%'],
   },
   {
+    _id: '67rdca3eeb7f6fgeed471821',
     name: 'High tiger',
     price: 980,
     imgURL: ['/'],
@@ -51,6 +56,7 @@ const items = [
     composition: ['Сotton: 95%', 'Elastane: 5%'],
   },
   {
+    _id: '67rdca3eeb7f6fgeed471822',
     name: 'High tiger',
     price: 980,
     imgURL: ['/'],
@@ -58,6 +64,7 @@ const items = [
     composition: ['Сotton: 95%', 'Elastane: 5%'],
   },
   {
+    _id: '67rdca3eeb7f6fgeed471823',
     name: 'High tiger',
     price: 980,
     imgURL: ['/'],
@@ -81,6 +88,7 @@ const items = [
     composition: ['Сotton: 95%', 'Elastane: 5%'],
   },
   {
+    _id: '67rdca3eeb7f6fgeed471826',
     name: 'High tiger',
     price: 980,
     imgURL: ['/'],
