@@ -72,7 +72,7 @@ const AccordionBox = () => {
         <Accordion.Item eventKey="2">
           <Accordion.Header>Return and Exchange</Accordion.Header>
           <Accordion.Body>
-            <p className="text-secondary text-start">
+            <p className="text-secondary text-startd">
               Items can be returned in full or in part for replacement size,
               color or for return within 14
               working days of receiving the parcel.
