@@ -1,0 +1,4 @@
+{
+  "port": "8000",
+  "mongoUri": "mongodb+srv://RostyslavLisovyi:Ethic-room-2023@cluster0.lw9fpdp.mongodb.net/?retryWrites=true&w=majority"
+}

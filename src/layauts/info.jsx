@@ -1,6 +1,6 @@
 import React from 'react';
 import AccordionBox from '../components/accordionBox';
-import Footter from '../components/footter';
+import Footer from '../components/footer';
 
 const Info = () => {
   return (
@@ -23,7 +23,7 @@ const Info = () => {
           <AccordionBox/>
         </div>
       </div>
-      <Footter/>
+      <Footer/>
     </>
 
   );

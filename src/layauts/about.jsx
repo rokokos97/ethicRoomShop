@@ -2,7 +2,7 @@ import React from 'react';
 
 import img from '../images/aboutUs1.png';
 import {Image} from 'react-bootstrap';
-import Footter from '../components/footter';
+import Footer from '../components/footer';
 
 const About = () => {
   return (
@@ -46,7 +46,7 @@ const About = () => {
         <p>Tel: +380 99 752 0346</p>
         <p>Social: <a className="link-dark" href="https://www.instagram.com/ethic_room/" >Instagram</a></p>
       </div>
-      <Footter/>
+      <Footer/>
     </>
   );
 };

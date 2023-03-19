@@ -5,13 +5,7 @@ import {
   NavLink,
   NavDropdown,
 } from 'react-bootstrap';
-import {Switch, Route} from 'react-router-dom';
-import Main from '../layauts/main';
-import Catalogue from '../layauts/catalogue';
-import About from '../layauts/about';
-import Info from '../layauts/info';
-
-
+import NavBar from './navBar';
 const Header = () => {
   return (
     <>
@@ -71,12 +65,7 @@ const Header = () => {
           </div>
         </div>
       </Navbar>
-      <Switch>
-        <Route exact path="/" component={Main}/>
-        <Route exact path="/catalogue" component={Catalogue}/>
-        <Route exact path="/about" component={About}/>
-        <Route exact path="/info" component={Info}/>
-      </Switch>
+      <NavBar/>
     </>
   );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-const Footter = () => {
+const Footer = () => {
   return (
     <div className="
       bg-dark
@@ -22,4 +22,4 @@ const Footter = () => {
     </div>
   );
 };
-export default Footter;
+export default Footer;

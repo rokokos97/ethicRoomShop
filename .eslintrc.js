@@ -26,5 +26,6 @@ module.exports = {
         'FunctionExpression': false,
       },
     }],
+    'new-cap': ['error', {'newIsCap': true}],
   },
 };
