@@ -12,7 +12,6 @@ class TokenService {
       accessToken, refreshToken, expiresIn: 3600,
     };
   }
-
   async save(userId, refreshToken) {
     const data = await Token.findOne({userId});
     console.log(data);
@@ -23,6 +22,19 @@ class TokenService {
     const token = await Token.create({user: userId, refreshToken});
     return token;
   }
+  validateRefresh(refreshToken) {
+    try {
+      return jwt.verify(refreshToken, config.get('refreshSecret'));
+    } catch (e) {
+      return null;
+    }
+  }
+  async findToken(refreshToken) {
+    try {
+      return await Token.findOne({refreshToken});
+    } catch (e) {
+      return null;
+    }
+  }
 }
-
 module.exports = new TokenService();

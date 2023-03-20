@@ -4,8 +4,8 @@ function getRandomInt(min, max) {
 
 function generateUserData() {
   return {
-    rate: getRandomInt(1, 5),
-    completedMeetings: getRandomInt(0, 200),
+    address: `via Indipendenza ${getRandomInt(1, 5)}`,
+    phone: `+3093${getRandomInt(100, 999)}${getRandomInt(10, 99)}${getRandomInt(10, 99)})`,
     image: `https://avatars.dicebear.com/api/avataaars/${(Math.random() + 1)
         .toString(36)
         .substring(7)}.svg`,

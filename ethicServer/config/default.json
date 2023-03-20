@@ -1,4 +1,6 @@
 {
-  "port": "8000",
-  "mongoUri": "mongodb+srv://RostyslavLisovyi:Ethic-room-2023@cluster0.lw9fpdp.mongodb.net/?retryWrites=true&w=majority"
+  "port": "8080",
+  "mongoUri": "mongodb+srv://RostyslavLisovyi:Ethic-room-2023@cluster0.lw9fpdp.mongodb.net/?retryWrites=true&w=majority",
+  "accessSecret": "super secret from backend",
+  "refreshSecret": "refresh secret from backend"
 }

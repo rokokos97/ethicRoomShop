@@ -9,9 +9,18 @@ const {check, validationResult} = require('express-validator');
 
 
 router.post('/singUp', [
-  check('email', 'email is not correct').isEmail(),
-  check('password', 'password length min 8 symbols').isLength(
-      {min: 8}),
+  check('email', 'email is not correct')
+      .exists()
+      .isEmail(),
+  check('password', 'password have be more secure')
+      .exists()
+      .isStrongPassword({
+        minLength: 8,
+        minSymbols: 1,
+        minUppercase: 1,
+        minLowercase: 1,
+        minNumbers:1,
+      }),
   async (req, res) => {
     try {
       const errors = validationResult(req);
@@ -45,6 +54,7 @@ router.post('/singUp', [
       await tokenService.save(newUser._id, tokens.refreshToken);
       res.status(201).send({...tokens, userId: newUser._id});
     } catch (e) {
+      console.log(e.message);
       res.status(500).json({
         message: 'Server error. Please repeat latter...',
       });
@@ -105,6 +115,25 @@ router.post('/singInWithPassword', [
     }
   },
 ]);
-// router.post('/token', async (req, res) => {
-// });
+function isTokenInvalid(data, dbToken) {
+  return !data||!dbToken||data._id !== dbToken?.user?.toString();
+}
+router.post('/token', async (req, res) => {
+  try {
+    const {refresh_token: refreshToken} = req.body;
+    const data = tokenService.validateRefresh(refreshToken);
+    const dbToken = await tokenService.findToken(refreshToken);
+
+    if (isTokenInvalid(data, dbToken)) {
+      return res.status(401).json({message: 'Unauthorized'});
+    }
+    const tokens = tokenService.generate({_id: data._id});
+    await tokenService.save(data._id, tokens.refreshToken);
+    res.status(201).send({...tokens, userId: data._id});
+  } catch (e) {
+    res.status(500).json({
+      message: 'Server error. Please repeat latter...!!',
+    });
+  }
+});
 module.exports = router;
