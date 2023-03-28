@@ -15,38 +15,38 @@ const NavBar = () => {
                             <h3>ETHIC</h3>
                         </Link>
                     </li>
-                    {/* {isLoggedIn && ( */}
-                    {/*     <li className="nav-item"> */}
-                    {/*         <Link */}
-                    {/*             className="nav-link " */}
-                    {/*             aria-current="page" */}
-                    {/*             to="/users" */}
-                    {/*         > */}
-                    {/*             Users */}
-                    {/*         </Link> */}
-                    {/*     </li> */}
-                    {/* )} */}
+                    {isLoggedIn && (
+                        <li className="nav-item">
+                            <Link
+                                className="nav-link "
+                                aria-current="page"
+                                to="/users"
+                            >
+                                Users
+                            </Link>
+                        </li>
+                    )}
                 </ul>
                 <div className="d-flex">
                     <ul className="nav">
                         <li className="nav-item"><Link
                           className="nav-link link-dark"
                           aria-current="page"
-                          to="/"
+                          to="/catalogue"
                         >
                             CATALOGUE
                         </Link></li>
                         <li className="nav-item"><Link
                           className="nav-link link-dark"
                           aria-current="page"
-                          to="/"
+                          to="/about"
                         >
                             ABOUT US
                         </Link></li>
                         <li className="nav-item"><Link
                           className="nav-link link-dark"
                           aria-current="page"
-                          to="/"
+                          to="/info"
                         >
                             INFO
                         </Link></li>

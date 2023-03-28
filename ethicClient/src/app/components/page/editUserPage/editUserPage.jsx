@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
     getProfessions,
     getProfessionsLoadingStatus
-} from "../../../store/professions";
+} from "../../../store/items";
 import { getCurrentUserData, updateUser } from "../../../store/users";
 
 const EditUserPage = () => {

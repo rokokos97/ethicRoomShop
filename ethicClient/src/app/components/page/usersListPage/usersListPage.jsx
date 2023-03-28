@@ -9,7 +9,7 @@ import _ from "lodash";
 import {
     getProfessions,
     getProfessionsLoadingStatus
-} from "../../../store/professions";
+} from "../../../store/items";
 import { useSelector } from "react-redux";
 import { getCurrentUserId, getUsersList } from "../../../store/users";
 const UsersListPage = () => {

@@ -7,7 +7,7 @@ import {
     loadUsersList
 } from "../../../store/users";
 import { loadCategoriesList } from "../../../store/categories";
-// import { loadProfessionsList } from "../../../store/professions";
+import { loadItemsList } from "../../../store/items";
 
 const AppLoader = ({ children }) => {
     const dispatch = useDispatch();
@@ -15,6 +15,7 @@ const AppLoader = ({ children }) => {
     const usersStatusLoading = useSelector(getUsersLoadingStatus());
     useEffect(() => {
         dispatch(loadCategoriesList());
+        dispatch(loadItemsList());
         if (isLoggedIn) {
             dispatch(loadUsersList());
         }
