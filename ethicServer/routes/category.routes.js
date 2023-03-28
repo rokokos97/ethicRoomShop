@@ -1,11 +1,11 @@
 const express = require('express');
-const Categories = require('../models/Category');
-// eslint-disable-next-line new-cap
+const Category = require('../models/Category');
 const router = express.Router({mergeParams: true});
 
 router.get('/', async (req, res) => {
   try {
-    const list = await Categories.find();
+    const list = await Category.find();
+    console.log(list);
     res.status(200).send(list);
   } catch (e) {
     res.status(500).json({
