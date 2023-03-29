@@ -6,14 +6,20 @@ import {
   getCategoriesLoadingStatus
 } from "../../store/categories";
 
-const Category = ({ id }) => {
+const Category = ({ _id }) => {
+  const id = _id[0];
   const isLoading = useSelector(getCategoriesLoadingStatus());
   const category = useSelector(getCategoryById(id));
-  if (!isLoading) {
-    return <p>{category.name}</p>;
-  } else return "loading ...";
+  console.log(category.name);
+  return (
+    <>
+      {
+        !isLoading && <p>{category.name}</p>
+      }
+    </>
+  );
 };
 Category.propTypes = {
-  id: PropTypes.string
+  _id: PropTypes.array
 };
 export default Category;

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import Category from "./category";
 import Composition from "./composition";
 
-const ItemsTable = ({ items }) => {
+const ItemsTable = ({ items, onSort, selectedSort }) => {
     const columns = {
       name: {
         path: "name",
@@ -23,12 +23,14 @@ const ItemsTable = ({ items }) => {
         name: "Description"
       },
       composition: {
+        // path: "composition",
         name: "Composition",
         component: (item) => <Composition composition={item.composition} />
       },
       category: {
+        // path: "category",
         name: "Category",
-        component: (item) => <Category category={item.category} />
+        component: (item) => <Category _id={item.category} />
       }
 
     };
@@ -37,11 +39,15 @@ const ItemsTable = ({ items }) => {
         <Table
           data={items}
           columns={columns}
+          onSort={onSort}
+          selectedSort={selectedSort}
         />
       </>
     );
 };
 ItemsTable.propTypes = {
-  items: PropTypes.array.isRequired
+  items: PropTypes.array.isRequired,
+  onSort: PropTypes.func.isRequired,
+  selectedSort: PropTypes.object.isRequired
 };
 export default ItemsTable;

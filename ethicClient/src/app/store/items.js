@@ -36,7 +36,6 @@ const { itemsRequested, itemsReceived, itemsRequestFiled } =
 export const loadItemsList = () => async (dispatch, getState) => {
     const { lastFetch } = getState().items;
     if (isOutdated(lastFetch)) {
-        console.log("lastFetch", lastFetch);
         dispatch(itemsRequested());
         try {
             const { content } = await itemService.get();

@@ -7,6 +7,7 @@
     "images": [""],
     "description": "T-shirt with fun embroidery",
     "composition": ["Сotton: 95%", "Elastane: 5%"],
+    "category": "6422c8691b2b77431ca1913b",
     "allGoods": true
   },
   {
@@ -17,6 +18,7 @@
     "images": ["/"],
     "description": "Make your mood with our tiger",
     "composition": ["Сotton: 100%"],
+    "category": "6422c8691b2b77431ca19138",
     "allGoods": true
   },
   {
@@ -27,6 +29,7 @@
     "images": ["/"],
     "description": "",
     "composition": ["Viscose: 50%", "Linen: 50%"],
+    "category": "6422c8691b2b77431ca19138",
     "allGoods": true
   },
   {
@@ -37,6 +40,7 @@
     "images": ["/"],
     "description": "Dress with transformer chains",
     "composition": ["polyester: 100%"],
+    "category": "6422c8691b2b77431ca19138",
     "allGoods": false
   },
   {
@@ -47,6 +51,7 @@
     "images": ["/"],
     "description": "Long kimono with embroidery ",
     "composition": ["viscose: 50%", "linen: 50%"],
+    "category": "6422c8691b2b77431ca19138",
     "allGoods": false
   },
   {
@@ -57,6 +62,7 @@
     "images": ["/"],
     "description": "Mesh body with zipper on the back",
     "composition": [],
+    "category": "6422c8691b2b77431ca19138",
     "allGoods": false
   },
   {
@@ -67,6 +73,7 @@
     "images": ["/"],
     "description": "Warm and gentle coat",
     "composition": ["imitative cashmere: 100%"],
+    "category": "6422c8691b2b77431ca19138",
     "allGoods": true
   },
   {
@@ -77,6 +84,7 @@
     "images": ["/"],
     "description": "Basic undershirt ",
     "composition": ["Сotton: 100%"],
+    "category": "6422c8691b2b77431ca19138",
     "allGoods": true
   },
   {
@@ -87,6 +95,7 @@
     "images": ["/"],
     "description": "Smile like a symbol of strength",
     "composition": ["Сotton: 95%", "Elastane: 5%"],
+    "category": "6422c8691b2b77431ca19138",
     "allGoods": true
   },
   {
@@ -97,6 +106,7 @@
     "images": ["/"],
     "description": "Long sleeve embroidered top",
     "composition": ["Mesh: 100%"],
+    "category": "6422c8691b2b77431ca19138",
     "allGoods": true
   },
   {
@@ -107,6 +117,7 @@
     "images": ["/"],
     "description": "",
     "composition": ["linen: 50%", "Сotton: 50%"],
+    "category": "6422c8691b2b77431ca19138",
     "allGoods": true
   },
   {
@@ -117,6 +128,7 @@
     "images": ["/"],
     "description": "",
     "composition": ["cashmere: 100%"],
+    "category": "6422c8691b2b77431ca19138",
     "allGoods": true
   }
 ]
