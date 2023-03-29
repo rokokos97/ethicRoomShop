@@ -56,10 +56,11 @@
   {
     "_id": "67rdca3eeb7f6fgeed471821",
     "name": "Kimono coat",
-    "price": 4800,
+    "price": "4800",
     "size": "onesize",
     "description": "Warm and gentle coat",
     "composition": ["imitative cashmere: 100%"],
+    "category": [""],
     "allGoods": true
   },
   {

@@ -6,7 +6,8 @@ const schema = new Schema({
   size: {type: String},
   description: {type: String},
   composition: {type: Array},
-  allGoods: {type: Boolean}
+  allGoods: {type: Boolean},
+  qualities: [{ type: Schema.Types.ObjectId, ref: 'Category' }],
 }, {
   timestamps: true
 })

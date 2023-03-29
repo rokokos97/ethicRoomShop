@@ -10,9 +10,15 @@ const ItemsCategoryCard = ({ item }) => {
         <Card.Img variant="top" src={item.imgURL} />
         <Card.Body>
           <Card.Title>
-            <Link><p className="text-center">
-              {item.name}
-            </p></Link>
+            <Link
+              className="nav-link link-dark"
+              aria-current="page"
+              to={`/${item.name}`}
+            >
+              <p className="text-center">
+                {item.name}
+              </p>
+            </Link>
           </Card.Title>
         </Card.Body>
       </Card>
