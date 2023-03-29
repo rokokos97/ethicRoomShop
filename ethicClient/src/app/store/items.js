@@ -22,6 +22,9 @@ const itemsSlice = createSlice({
         itemsRequestFiled: (state, action) => {
             state.error = action.payload;
             state.isLoading = false;
+        },
+        itemCreated: (state, action) => {
+            state.entities.push(action.payload);
         }
     }
 });
@@ -45,7 +48,7 @@ export const loadItemsList = () => async (dispatch, getState) => {
 };
 export const getItems = () => (state) => state.items.entities;
 export const getItemsLoadingStatus = () => (state) =>
-    state.professions.isLoading;
+    state.items.isLoading;
 export const getItemById = (id) => (state) => {
     if (state.items.entities) {
         return state.items.entities.find((p) => p._id === id);

@@ -1,6 +1,6 @@
 import React from "react";
-import AccordionBox from "../components/accordionBox";
-import Footer from "../components/footer";
+import AccordionBox from "../components/ui/accordionBox";
+import Footer from "../components/ui/footer";
 
 const Info = () => {
   return (

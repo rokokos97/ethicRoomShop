@@ -15,6 +15,11 @@ const NavBar = () => {
                             <h3>ETHIC</h3>
                         </Link>
                     </li>
+                    <li>
+                        <Link className="nav-link link-dark" aria-current="page" to="/items">
+                            <h3>ITEMS</h3>
+                        </Link>
+                    </li>
                     {isLoggedIn && (
                         <li className="nav-item">
                             <Link

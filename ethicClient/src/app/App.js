@@ -8,8 +8,7 @@ import LogOut from "./layouts/logOut";
 import AppLoader from "./components/ui/hoc/appLoader";
 import Info from "./layouts/info";
 import About from "./layouts/about";
-import Kimono from "./layouts/kimono";
-import NewItemForm from "./components/ui/newItemForm";
+import Items from "./layouts/Items";
 
 function App() {
     return (
@@ -21,8 +20,7 @@ function App() {
                     <Route path="/logout" component={LogOut} />
                     <Route path="/info" component={Info} />
                     <Route path="/about" component={About} />
-                    <Route path="/catalogue" component={NewItemForm} />
-                    <Route path="/kimono" component={Kimono} />
+                  <Route path="/items" component={Items} />
                     <Route path="/" exact component={Main} />
                     <Redirect to="/" />
                 </Switch>

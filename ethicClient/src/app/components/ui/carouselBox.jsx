@@ -1,9 +1,9 @@
 import React from "react";
 import { Carousel, CarouselItem } from "react-bootstrap";
-import carousel1 from "../images/main1.png";
-import carousel2 from "../images/main2.png";
-import carousel3 from "../images/main3.png";
-import carousel4 from "../images/main4.png";
+import carousel1 from "../../images/main1.png";
+import carousel2 from "../../images/main2.png";
+import carousel3 from "../../images/main3.png";
+import carousel4 from "../../images/main4.png";
 
 const CarouselBox = () => {
   return (

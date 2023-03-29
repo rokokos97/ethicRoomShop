@@ -2,7 +2,7 @@ import React from "react";
 
 import img from "../images/aboutUs01.png";
 import { Image } from "react-bootstrap";
-import Footer from "../components/footer";
+import Footer from "../components/ui/footer";
 
 const About = () => {
   return (

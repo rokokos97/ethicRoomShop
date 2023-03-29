@@ -7,7 +7,7 @@ const schema = new Schema({
   description: {type: String},
   composition: {type: Array},
   allGoods: {type: Boolean},
-  qualities: [{ type: Schema.Types.ObjectId, ref: 'Category' }],
+  category: [{ type: Schema.Types.ObjectId, ref: 'Category' }],
 }, {
   timestamps: true
 })
