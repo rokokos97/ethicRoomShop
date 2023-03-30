@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import { getIsLoggedIn } from "../../store/users";
 import NavProfile from "./navProfile";
+import CatalogueDropdown from "./catalogueDropdown";
 const NavBar = () => {
     const isLoggedIn = useSelector(getIsLoggedIn());
     return (
@@ -34,13 +35,11 @@ const NavBar = () => {
                 </ul>
                 <div className="d-flex">
                     <ul className="nav">
-                        <li className="nav-item"><Link
-                          className="nav-link link-dark"
-                          aria-current="page"
-                          to="/catalogue"
-                        >
-                            CATALOGUE
-                        </Link></li>
+                        <li className="nav-item">
+                            <CatalogueDropdown>
+                                CATALOGUE
+                            </CatalogueDropdown>
+                        </li>
                         <li className="nav-item"><Link
                           className="nav-link link-dark"
                           aria-current="page"
@@ -55,18 +54,21 @@ const NavBar = () => {
                         >
                             INFO
                         </Link></li>
+                        <li>
+                            {isLoggedIn ? (
+                              <NavProfile />
+                            ) : (
+                              <Link
+                                className="nav-link link-dark"
+                                aria-current="page"
+                                to="/login"
+                              >
+                                  LOG IN
+                              </Link>
+                            )}
+                        </li>
                     </ul>
-                    {isLoggedIn ? (
-                        <NavProfile />
-                    ) : (
-                        <Link
-                            className="nav-link link-dark"
-                            aria-current="page"
-                            to="/login"
-                        >
-                            LOG IN
-                        </Link>
-                    )}
+
                 </div>
             </div>
         </nav>
