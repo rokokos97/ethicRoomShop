@@ -8,7 +8,7 @@ import carousel4 from "../../images/main4.png";
 const CarouselBox = () => {
   return (
     <>
-      <Carousel>
+      <Carousel fade>
         <CarouselItem>
           <img
             src={carousel1}

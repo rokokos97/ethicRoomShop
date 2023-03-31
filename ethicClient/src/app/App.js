@@ -20,7 +20,7 @@ function App() {
                     <Route path="/logout" component={LogOut} />
                     <Route path="/info" component={Info} />
                     <Route path="/about" component={About} />
-                    <Route path="/items" component={Items} />
+                    <Route path="/items/:itemId?" component={Items} />
                     <Route path="/" exact component={Main} />
                     <Redirect to="/" />
                 </Switch>
