@@ -8,13 +8,17 @@ import NavBar from "./components/ui/navBar";
 import RegisterForm from "./components/ui/registerForm";
 import LoginForm from "./components/ui/loginForm";
 import About from "./layouts/about";
+import ItemsListPage from "./components/page/itemListPage";
+import AppLoader from "./components/ui/hoc/appLoader";
 
 function App() {
     return (
         <div>
           <NavBar/>
+                <AppLoader>
                 <Routes>
                     <Route index element={<Main/>} />
+                    <Route path="catalogue" element={<ItemsListPage/>}/>
                     <Route path="info" element={<Info/>}/>
                     <Route path="about" element={<About/>}/>
                     <Route path="login" element={<Login/>}>
@@ -23,7 +27,9 @@ function App() {
                       <Route path="login" element={<LoginForm/>} />
                       <Route path="*" element="/auth/signUp"/>
                     </Route>
+                    <Route path="*" element={<Navigate to="/"/>}/>
                 </Routes>
+                </AppLoader>
             <ToastContainer />
         </div>
     );

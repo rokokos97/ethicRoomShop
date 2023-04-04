@@ -6,6 +6,7 @@ import { getIsLoggedIn } from "../../store/users";
 import NavProfile from "./navProfile";
 const NavBar = () => {
     const isLoggedIn = useSelector(getIsLoggedIn());
+    console.log(isLoggedIn);
     return (
         <nav className="navbar bg-light mb-3">
                <div className="container-fluid">
@@ -21,7 +22,7 @@ const NavBar = () => {
                         <li className="nav-item"><NavLink
                           className="nav-link link-dark"
                           aria-current="page"
-                          to="/items"
+                          to="/catalogue"
                         >
                             CATALOGUE
                         </NavLink></li>

@@ -11,12 +11,12 @@ const CategoriesListPage = () => {
   return (
     <>
       <div className="mx-auto m-5">
-        <ul className="d-flex flex-wrap list-unstyled justify-content-around">
+        <ul className="d-flex flex-wrap list-unstyled justify-content-md-center">
           {
             !isLoading && items.map((item, index) => (
              <li
                key={index}
-               className="m-1"
+               className="m-1 w-25"
              >
                <CategoryCard item={item} />
              </li>

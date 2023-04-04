@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import { getDataStatus, loadUsersList } from "../../../store/users";
 
-const UsersLoader = ({ children }) => {
+const UserAuth = ({ children }) => {
     const dataStatus = useSelector(getDataStatus());
     const dispatch = useDispatch();
     useEffect(() => {
@@ -13,10 +13,10 @@ const UsersLoader = ({ children }) => {
     return children;
 };
 
-UsersLoader.propTypes = {
+UserAuth.propTypes = {
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.node
     ])
 };
-export default UsersLoader;
+export default UserAuth;

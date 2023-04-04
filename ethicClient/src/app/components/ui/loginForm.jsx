@@ -48,10 +48,7 @@ const LoginForm = () => {
         e.preventDefault();
         const isValid = validate();
         if (!isValid) return;
-        const redirect = navigate.location.state
-            ? navigate.location.state.from.pathname
-            : "/";
-
+        const redirect = navigate("/");
         dispath(login({ payload: data, redirect }));
     };
     return (

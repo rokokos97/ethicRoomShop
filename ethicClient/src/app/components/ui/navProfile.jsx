@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getCurrentUserData } from "../../store/users";
-import UsersLoader from "./hoc/usersLoader";
+import UserAuth from "./hoc/userAuth";
 const NavProfile = () => {
     const currentUser = useSelector(getCurrentUserData());
     console.log(currentUser);
@@ -13,7 +13,7 @@ const NavProfile = () => {
 
     if (!currentUser) return "loading";
     return (
-      <UsersLoader>
+      <UserAuth>
         <div className="dropdown" onClick={toggleMenu}>
             <div className="btn dropdown-toggle d-flex align-items-center">
                 <div className="me-2">{currentUser.name}</div>
@@ -36,7 +36,7 @@ const NavProfile = () => {
                 </Link>
             </div>
         </div>
-          </UsersLoader>
+          </UserAuth>
     );
 };
 

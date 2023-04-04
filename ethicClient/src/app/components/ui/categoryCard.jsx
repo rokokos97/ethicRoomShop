@@ -4,9 +4,9 @@ import img from "../../images/itemImage/blackTankTop1.jpeg";
 import { Image } from "react-bootstrap";
 const CategoryCard = ({ item }) => {
     return (
-        <div>
-          <div>
-            <div>
+        <div className="">
+          <div className="">
+            <div className="">
               <Image fluid src={img}/>
             </div>
                <div className="d-flex flex-column align-items-center text-center position-relative">
