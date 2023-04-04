@@ -1,30 +1,29 @@
 import React from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import Login from "./layouts/login";
 import Main from "./layouts/main";
-import NavBar from "./components/ui/navBar";
-import { ToastContainer } from "react-toastify";
-import LogOut from "./layouts/logOut";
-import AppLoader from "./components/ui/hoc/appLoader";
 import Info from "./layouts/info";
+import NavBar from "./components/ui/navBar";
+import RegisterForm from "./components/ui/registerForm";
+import LoginForm from "./components/ui/loginForm";
 import About from "./layouts/about";
-import Items from "./layouts/Items";
 
 function App() {
     return (
         <div>
-            <AppLoader>
-                <NavBar />
-                <Switch>
-                    <Route path="/login/:type?" component={Login} />
-                    <Route path="/logout" component={LogOut} />
-                    <Route path="/info" component={Info} />
-                    <Route path="/about" component={About} />
-                    <Route path="/items/:itemId?" component={Items} />
-                    <Route path="/" exact component={Main} />
-                    <Redirect to="/" />
-                </Switch>
-            </AppLoader>
+          <NavBar/>
+                <Routes>
+                    <Route index element={<Main/>} />
+                    <Route path="info" element={<Info/>}/>
+                    <Route path="about" element={<About/>}/>
+                    <Route path="login" element={<Login/>}>
+                      <Route index element={<Navigate to="/auth/signUp"/>}/>
+                      <Route path="signup" element={<RegisterForm/>}/>
+                      <Route path="login" element={<LoginForm/>} />
+                      <Route path="*" element="/auth/signUp"/>
+                    </Route>
+                </Routes>
             <ToastContainer />
         </div>
     );

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { validator } from "../../utils/ validator";
 import TextField from "../common/form/textField";
-import { useHistory } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getAuthErrors, login } from "../../store/users";
+import * as yup from "yup";
 
 const LoginForm = () => {
     const [data, setData] = useState({
@@ -12,8 +12,8 @@ const LoginForm = () => {
         stayOn: false
     });
     const loginError = useSelector(getAuthErrors());
-    const history = useHistory();
     const dispath = useDispatch();
+    const navigate = useNavigate();
     const [errors, setErrors] = useState({});
 
     const handleChange = (target) => {
@@ -22,25 +22,24 @@ const LoginForm = () => {
             [target.name]: target.value
         }));
     };
-
-    const validatorConfog = {
-        email: {
-            isRequired: {
-                message: "Электронная почта обязательна для заполнения"
-            }
-        },
-        password: {
-            isRequired: {
-                message: "Пароль обязателкн для заполнения"
-            }
-        }
-    };
+    const validateSchema = yup.object().shape({
+        password: yup.string().required("Password is required"),
+        email: yup.string()
+          .required("Email is required")
+          .email("Email is not correct")
+    });
     useEffect(() => {
         validate();
     }, [data]);
     const validate = () => {
-        const errors = validator(data, validatorConfog);
-        setErrors(errors);
+        validateSchema
+          .validate(data)
+          .then(() => {
+              setErrors({});
+          })
+          .catch((err) => {
+              setErrors({ [err.path]: err.message });
+          });
         return Object.keys(errors).length === 0;
     };
     const isValid = Object.keys(errors).length === 0;
@@ -49,39 +48,52 @@ const LoginForm = () => {
         e.preventDefault();
         const isValid = validate();
         if (!isValid) return;
-        const redirect = history.location.state
-            ? history.location.state.from.pathname
+        const redirect = navigate.location.state
+            ? navigate.location.state.from.pathname
             : "/";
 
         dispath(login({ payload: data, redirect }));
     };
     return (
-        <form onSubmit={handleSubmit}>
-            <TextField
+      <>
+          <h3 className="mb-4">Login</h3>
+          <form onSubmit={handleSubmit}>
+              <TextField
                 label="Email"
                 name="email"
                 value={data.email}
                 onChange={handleChange}
                 error={errors.email}
-            />
-            <TextField
+              />
+              <TextField
                 label="Password"
                 type="password"
                 name="password"
                 value={data.password}
                 onChange={handleChange}
                 error={errors.password}
-            />
-            {loginError && <p className="text-danger">{loginError}</p>}
+              />
+              {loginError && <p className="text-danger">{loginError}</p>}
 
-            <button
+              <button
                 type="submit"
                 disabled={!isValid}
                 className="btn btn-secondary w-100 mx-auto"
-            >
-                Log In
-            </button>
-        </form>
+              >
+                  Log In
+              </button>
+          </form>
+          <p>
+              Dont have account?{"  "}
+              <NavLink to="signUp"
+                role="button"
+                className="link-dark"
+              >
+                  {" "}
+                  Sign Up
+              </NavLink>
+          </p>
+      </>
     );
 };
 

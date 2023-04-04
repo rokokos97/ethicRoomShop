@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { validator } from "../../utils/ validator";
 import TextField from "../common/form/textField";
 import RadioField from "../common/form/radio.Field";
 import CheckBoxField from "../common/form/checkBoxField";
 import { signUp } from "../../store/users";
 import { useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
+import * as yup from "yup";
 const RegisterForm = () => {
     const dispatch = useDispatch();
     const [data, setData] = useState({
         name: "",
         email: "",
         password: "",
-        sex: "male",
+        sex: "other",
         licence: false
     });
     const [errors, setErrors] = useState({});
@@ -22,52 +23,35 @@ const RegisterForm = () => {
             [target.name]: target.value
         }));
     };
-    const validatorConfig = {
-        email: {
-            isRequired: {
-                message: "Email is required"
-            },
-            isEmail: {
-                message: "Email entered incorrectly"
-            }
-        },
-        name: {
-            isRequired: {
-                message: "Name is required"
-            },
-            min: {
-                message: "Name must be at least 3 characters long",
-                value: 3
-            }
-        },
-        password: {
-            isRequired: {
-                message: "Password is required"
-            },
-            isCapitalSymbol: {
-                message: "Password must contain at least one capital letter"
-            },
-            isContainDigit: {
-                message: "Password must contain at least one number"
-            },
-            min: {
-                message: "Password must contain at least one number",
-                value: 8
-            }
-        },
-        licence: {
-            isRequired: {
-                message:
-                    "You may not use our service without acknowledging the license agreement"
-            }
-        }
-    };
+    const validateSchema = yup.object().shape({
+        licence: yup.boolean().oneOf([true], "You may not use our service without acknowledging the license agreement"),
+        password: yup.string()
+          .required("Password is required")
+          .min(8, "Password has to be longer than 8 characters")
+          .matches(/(?=.*[0-9])/, "Password must contain at least one number")
+          .matches(/(?=.*[!_$%&*"])/, "Password must contain at least one of symbols !_$%&*")
+          .matches(/(?=.*[A-Z])/, "Password must contain at least one capital letter")
+          .max(16, "Password hasn't' to be longer than 16 characters"),
+        email: yup.string()
+          .required("Email is required")
+          .email("Email is not correct"),
+        name: yup.string()
+          .required("Name is requires")
+          .min(3, "Name must be at least 3 characters long")
+    });
     useEffect(() => {
         validate();
     }, [data]);
     const validate = () => {
-        const errors = validator(data, validatorConfig);
-        setErrors(errors);
+        validateSchema
+          .validate(data)
+          .then(() => {
+              setErrors({});
+          })
+          .catch((err) => {
+              setErrors({ [err.path]: err.message });
+          });
+
         return Object.keys(errors).length === 0;
     };
     const isValid = Object.keys(errors).length === 0;
@@ -83,30 +67,32 @@ const RegisterForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <TextField
+      <>
+          <h3 className="mb-4 text-center">Register</h3>
+          <form onSubmit={handleSubmit}>
+              <TextField
                 label="Name"
                 name="name"
                 value={data.name}
                 onChange={handleChange}
                 error={errors.name}
-            />
-            <TextField
+              />
+              <TextField
                 label="Email"
                 name="email"
                 value={data.email}
                 onChange={handleChange}
                 error={errors.email}
-            />
-            <TextField
+              />
+              <TextField
                 label="Password"
                 type="password"
                 name="password"
                 value={data.password}
                 onChange={handleChange}
                 error={errors.password}
-            />
-            <RadioField
+              />
+              <RadioField
                 options={[
                     { name: "Male", value: "male" },
                     { name: "Female", value: "female" },
@@ -116,23 +102,34 @@ const RegisterForm = () => {
                 name="sex"
                 onChange={handleChange}
                 label="Choose your gender"
-            />
-            <CheckBoxField
+              />
+              <CheckBoxField
                 value={data.licence}
                 onChange={handleChange}
                 name="licence"
                 error={errors.licence}
-            >
-                Confirm <a>license</a>
-            </CheckBoxField>
-            <button
+              >
+                  Confirm <a>license</a>
+              </CheckBoxField>
+              <button
                 type="submit"
                 disabled={!isValid}
                 className="btn btn-primary w-100 mx-auto"
-            >
-                Register
-            </button>
-        </form>
+              >
+                  Register
+              </button>
+          </form>
+          <p>
+              Already have account?{"  "}
+              <NavLink to="login"
+                role="button"
+                className="link-dark"
+              >
+                  {" "}
+                  Sign In
+              </NavLink>
+          </p>
+     </>
     );
 };
 export default RegisterForm;

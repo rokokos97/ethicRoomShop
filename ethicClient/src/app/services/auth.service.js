@@ -15,11 +15,14 @@ const authService = {
         return data;
     },
     login: async ({ email, password }) => {
+        console.log(email);
+        console.log(password);
         const { data } = await httpAuth.post(`signInWithPassword`, {
             email,
             password,
             returnSecureToken: true
         });
+        console.log(data);
         return data;
     },
     refresh: async () => {

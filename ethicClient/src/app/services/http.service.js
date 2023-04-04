@@ -53,7 +53,7 @@ http.interceptors.request.use(
   }
 );
 
-function transormData(data) {
+function transformData(data) {
   return data && !data._id
     ? Object.keys(data).map((key) => ({
       ...data[key]
@@ -64,7 +64,7 @@ function transormData(data) {
 http.interceptors.response.use(
   (res) => {
     if (configFile.isFireBase) {
-      res.data = { content: transormData(res.data) };
+      res.data = { content: transformData(res.data) };
     }
     res.data = { content: res.data };
     return res;

@@ -1,19 +1,16 @@
 const express = require('express');
-// eslint-disable-next-line new-cap
-const router = express.Router({mergeParams: true});
-const User = require('../models/User');
-const bcrypt = require('bcrypt');
-const {generateUserData} = require('../utils/helpers');
-const tokenService = require('../services/token.service');
+const bcrypt = require('bcryptjs');
 const {check, validationResult} = require('express-validator');
+const User = require('../models/User');
+// const {generateUserData} = require('../utils/helpers');
+const tokenService = require('../services/token.service');
+const router = express.Router({mergeParams: true});
 
 
-router.post('/singUp', [
+router.post('/signUp', [
   check('email', 'email is not correct')
-      .exists()
       .isEmail(),
   check('password', 'password have be more secure')
-      .exists()
       .isStrongPassword({
         minLength: 8,
         minSymbols: 1,
@@ -46,7 +43,7 @@ router.post('/singUp', [
       }
       const hashedPassword = await bcrypt.hash(password, 12);
       const newUser = await User.create({
-        ...generateUserData(),
+        // ...generateUserData(),
         ...req.body,
         password: hashedPassword,
       });
@@ -61,7 +58,7 @@ router.post('/singUp', [
     }
   }],
 );
-router.post('/singInWithPassword', [
+router.post('/signInWithPassword', [
   check('email', 'email is not correct')
       .normalizeEmail()
       .isEmail(),
@@ -87,6 +84,8 @@ router.post('/singInWithPassword', [
         });
       }
       const {email, password} = req.body;
+      console.log(email);
+      console.log(password);
       const existingUser = await User.findOne({email});
       if (!existingUser) {
         return res.status(400).json({
@@ -125,7 +124,7 @@ router.post('/token', async (req, res) => {
     const dbToken = await tokenService.findToken(refreshToken);
 
     if (isTokenInvalid(data, dbToken)) {
-      return res.status(401).json({message: 'Unauthorized'});
+      return res.status(401).json({message: 'UnauthorizedAuth'});
     }
     const tokens = tokenService.generate({_id: data._id});
     await tokenService.save(data._id, tokens.refreshToken);

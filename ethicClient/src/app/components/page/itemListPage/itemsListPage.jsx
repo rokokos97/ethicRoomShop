@@ -20,7 +20,6 @@ const ItemsListPage = () => {
   const [selectedCategory, setSelectedCategory] = useState();
   const isCategoryLoading = useSelector(getCategoriesLoadingStatus());
   const categories = useSelector(getCategories());
-
   useEffect(() => {
     setCurrentPage(1);
   }, [selectedCategory, searchQuery]);
@@ -55,8 +54,15 @@ const ItemsListPage = () => {
   return (
     <>
       { !isItemsLoading && !isCategoryLoading &&
-        <div className="mx-auto m-5 m-75">
-          <div>
+          <div className="mx-auto m-5 m-75">
+          <div className="d-flex justify-content-center mx-2">
+            <div>
+              <GroupList
+                selectedItem={selectedCategory}
+                items={categories}
+                onItemSelect={handleCategorySelect}
+              />
+            </div>
             <input
               type="text"
               name="searchQuery"
@@ -64,12 +70,8 @@ const ItemsListPage = () => {
               onChange={handleSearchQuery}
               value={searchQuery}
             />
-            <GroupList
-              selectedItem={selectedCategory}
-              items={categories}
-              onItemSelect={handleCategorySelect}
-            />
           </div>
+
           <ul className="d-flex flex-wrap list-unstyled justify-content-center">
             {
               !isItemsLoading && itemsCrop.map((item, index) => (
