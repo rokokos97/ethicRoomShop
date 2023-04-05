@@ -19,22 +19,17 @@ router.patch('/:userId', auth, async (req, res) => {
     })
   }
 })
-// router.get('/:userId', auth, async (req, res) => {
-//   try {
-//     const { userId } = req.params
-//
-//     if (userId === req.user._id) {
-//       const currentUser = await User.findById(userId, req.body)
-//       res.send(currentUser)
-//     } else {
-//       res.status(401).json({message: 'Unauthorized'})
-//     }
-//   } catch (e) {
-//     res.status(500).json({
-//       message: 'На сервере произошла ошибка. Попробуйте позже'
-//     })
-//   }
-// })
+router.get('/:userId', async (req, res) => {
+  try {
+    const { userId } = req.params
+    const currentUser = await User.findById(userId)
+    res.send(currentUser)
+  } catch (e) {
+    res.status(500).json({
+      message: 'На сервере произошла ошибка. Попробуйте позже'
+    })
+  }
+})
 router.get('/', auth, async (req, res) => {
   try {
     const list = await User.find()
