@@ -1,43 +1,32 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getCurrentUserData } from "../../store/users";
-import UserAuth from "./hoc/userAuth";
+import { getIsLoggedIn, getUser } from "../../store/user";
 const NavProfile = () => {
-    const currentUser = useSelector(getCurrentUserData());
-    console.log(currentUser);
+    const isLoggedIn = useSelector(getIsLoggedIn());
     const [isOpen, setOpen] = useState(false);
+    const user = useSelector(getUser());
     const toggleMenu = () => {
         setOpen((prevState) => !prevState);
     };
-
-    if (!currentUser) return "loading";
+    if (!isLoggedIn && !user) return "";
     return (
-      <UserAuth>
         <div className="dropdown" onClick={toggleMenu}>
             <div className="btn dropdown-toggle d-flex align-items-center">
-                <div className="me-2">{currentUser.name}</div>
-                <img
-                    src={currentUser.image}
-                    alt=""
-                    height="40"
-                    className="img-responsive rounded-circle"
-                />
+                <div className="me-2">user name</div>
             </div>
             <div className={"w-100 dropdown-menu" + (isOpen ? " show" : "")}>
-                <Link
-                    to={`/users/${currentUser._id}`}
-                    className="dropdown-item"
-                >
-                    Profile
-                </Link>
+                {/* <Link */}
+                {/*     to={`/users/${currentUser._id}`} */}
+                {/*     className="dropdown-item" */}
+                {/* > */}
+                {/*     Profile */}
+                {/* </Link> */}
                 <Link to="/logout" className="dropdown-item">
                     Log Out
                 </Link>
             </div>
         </div>
-          </UserAuth>
     );
 };
-
 export default NavProfile;

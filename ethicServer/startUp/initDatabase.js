@@ -23,7 +23,6 @@ async function createInitialEntity(Model, data) {
           await newItem.save();
           return newItem;
         } catch (e) {
-          console.log(e.message);
           return e.message;
         }
       }),

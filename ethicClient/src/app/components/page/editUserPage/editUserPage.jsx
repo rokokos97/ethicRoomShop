@@ -9,7 +9,7 @@ import {
     getProfessions,
     getProfessionsLoadingStatus
 } from "../../../store/items";
-import { getCurrentUserData, updateUser } from "../../../store/users";
+import { getCurrentUserData, updateUser } from "../../../store/user";
 
 const EditUserPage = () => {
     const [isLoading, setIsLoading] = useState(true);

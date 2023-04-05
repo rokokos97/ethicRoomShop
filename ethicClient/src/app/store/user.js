@@ -10,36 +10,24 @@ const initialState = localStorageService.getAccessToken()
           isLoading: true,
           error: null,
           auth: { userId: localStorageService.getUserId() },
-          isLoggedIn: true,
-          dataLoaded: false
+          isLoggedIn: true
       }
     : {
           entities: null,
           isLoading: false,
           error: null,
           auth: null,
-          isLoggedIn: false,
-          dataLoaded: false
+          isLoggedIn: false
       };
 
 const usersSlice = createSlice({
-    name: "users",
+    name: "user",
     initialState,
     reducers: {
-        usersRequested: (state) => {
-            state.isLoading = true;
-        },
-        usersReceived: (state, action) => {
-            state.entities = action.payload;
-            state.dataLoaded = true;
-            state.isLoading = false;
-        },
-        usersRequestFiled: (state, action) => {
-            state.error = action.payload;
-            state.isLoading = false;
-        },
         authRequestSuccess: (state, action) => {
-            state.auth = action.payload;
+          console.log("action.payload", action.payload);
+          state.entities = action.payload;
+            state.auth = action.payload._id;
             state.isLoggedIn = true;
         },
         authRequestFailed: (state, action) => {
@@ -52,7 +40,6 @@ const usersSlice = createSlice({
             state.entities = null;
             state.isLoggedIn = false;
             state.auth = null;
-            state.dataLoaded = false;
         },
         userUpdateSuccess: (state, action) => {
             state.entities[
@@ -64,12 +51,8 @@ const usersSlice = createSlice({
         }
     }
 });
-
 const { reducer: usersReducer, actions } = usersSlice;
 const {
-    usersRequested,
-    usersReceived,
-    usersRequestFiled,
     authRequestFailed,
     authRequestSuccess,
     userLoggedOut,
@@ -80,17 +63,34 @@ const authRequested = createAction("users/authRequested");
 const userUpdateFailed = createAction("users/userUpdateFailed");
 const userUpdateRequested = createAction("users/userUpdateRequested");
 
+export const signUp = (payload) =>
+  async (dispatch) => {
+      dispatch(authRequested());
+      try {
+        const data = await authService.register(payload);
+          localStorageService.setTokens(data);
+        console.log("data.user", data.user);
+        dispatch(authRequestSuccess(data.user));
+          history.push("/");
+      } catch (error) {
+          dispatch(authRequestFailed(error.message));
+      }
+  };
+
 export const login =
     ({ payload, redirect }) =>
     async (dispatch) => {
         const { email, password } = payload;
         dispatch(authRequested());
         try {
-            const data = await authService.login({ email, password });
-            localStorageService.setTokens(data);
-            dispatch(authRequestSuccess({ userId: data.userId }));
-            history.push(redirect);
+          const data = await authService.login({ email, password });
+          console.log("data login from server", data);
+          localStorageService.setTokens(data);
+          console.log("data.user", data.user);
+          dispatch(authRequestSuccess(data.user));
+          history.push(redirect);
         } catch (error) {
+            console.log(error);
             const { code, message } = error.response.data.error;
             if (code === 400) {
                 const errorMessage = generetaAuthError(message);
@@ -100,60 +100,30 @@ export const login =
             }
         }
     };
-
-export const signUp = (payload) =>
-    async (dispatch) => {
-        dispatch(authRequested());
-        try {
-            const data = await authService.register(payload);
-            console.log(data);
-            localStorageService.setTokens(data);
-            dispatch(authRequestSuccess({ userId: data.userId }));
-            history.push("/items");
-        } catch (error) {
-            dispatch(authRequestFailed(error.message));
-        }
-    };
 export const logOut = () => (dispatch) => {
     localStorageService.removeAuthData();
     dispatch(userLoggedOut());
     history.push("/");
-};
-export const loadUsersList = () => async (dispatch) => {
-    dispatch(usersRequested());
-    try {
-        const { content } = await userService.get();
-        dispatch(usersReceived(content));
-    } catch (error) {
-        dispatch(usersRequestFiled(error.message));
-    }
 };
 export const updateUser = (payload) => async (dispatch) => {
     dispatch(userUpdateRequested());
     try {
         const { content } = await userService.update(payload);
         dispatch(userUpdateSuccess(content));
-        history.push(`/users/${content._id}`);
+        history.push(`/user/${content._id}`);
     } catch (error) {
         dispatch(userUpdateFailed(error.message));
     }
 };
-
-export const getUsersList = () => (state) => state.users.entities;
-export const getCurrentUserData = () => (state) => {
-    return state.users.entities
-        ? state.users.entities.find((u) => u._id === state.users.auth.userId)
-        : null;
+export const loadUser = (payload) => async (dispatch) => {
+  try {
+    const { content } = await userService.getCurrentUser(payload);
+    console.log(content);
+  } catch (error) {
+    dispatch(userUpdateFailed(error.message));
+  }
 };
-export const getUserById = (userId) => (state) => {
-    if (state.users.entities) {
-        return state.users.entities.find((u) => u._id === userId);
-    }
-};
-
-export const getIsLoggedIn = () => (state) => state.users.isLoggedIn;
-export const getDataStatus = () => (state) => state.users.dataLoaded;
-export const getUsersLoadingStatus = () => (state) => state.users.isLoading;
-export const getCurrentUserId = () => (state) => state.users.auth.userId;
-export const getAuthErrors = () => (state) => state.users.error;
+export const getUser = () => (state) => state.user.entities;
+export const getIsLoggedIn = () => (state) => state.user.isLoggedIn;
+export const getAuthErrors = () => (state) => state.user.error;
 export default usersReducer;

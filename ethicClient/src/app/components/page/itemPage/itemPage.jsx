@@ -5,10 +5,13 @@ import { getItemById } from "../../../store/items";
 import { Image } from "react-bootstrap";
 import img from "../../../images/itemImage/blackTankTop2.jpeg";
 import { useHistory } from "react-router";
+import { useParams } from "react-router-dom";
 
-const ItemPage = ({ itemId }) => {
+const ItemPage = () => {
     const history = useHistory();
-    const item = useSelector(getItemById(itemId));
+    const params = useParams();
+  console.log(params);
+  const item = useSelector(getItemById(itemId));
     if (item) {
         return (
           <>
@@ -37,7 +40,7 @@ const ItemPage = ({ itemId }) => {
 };
 
 ItemPage.propTypes = {
-    itemId: PropTypes.string.isRequired
+    itemId: PropTypes.string
 };
 
 export default ItemPage;

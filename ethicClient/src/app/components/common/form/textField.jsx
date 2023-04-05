@@ -22,6 +22,7 @@ const TextField = ({ label, type, name, value, onChange, error }) => {
                     id={name}
                     name={name}
                     value={value}
+                    autoComplete="on"
                     onChange={handleChange}
                     className={getInputClasses()}
                 />

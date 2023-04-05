@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import TextField from "../common/form/textField";
 import RadioField from "../common/form/radio.Field";
 import CheckBoxField from "../common/form/checkBoxField";
-import { signUp } from "../../store/users";
+import { signUp } from "../../store/user";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import * as yup from "yup";
@@ -24,7 +24,6 @@ const RegisterForm = () => {
         }));
     };
     const validateSchema = yup.object().shape({
-        licence: yup.boolean().oneOf([true], "You may not use our service without acknowledging the license agreement"),
         password: yup.string()
           .required("Password is required")
           .min(8, "Password has to be longer than 8 characters")
@@ -37,7 +36,8 @@ const RegisterForm = () => {
           .email("Email is not correct"),
         name: yup.string()
           .required("Name is requires")
-          .min(3, "Name must be at least 3 characters long")
+          .min(3, "Name must be at least 3 characters long"),
+        licence: yup.boolean().oneOf([true], "You may not use our service without acknowledging the license agreement")
     });
     useEffect(() => {
         validate();

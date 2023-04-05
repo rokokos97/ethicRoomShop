@@ -2,11 +2,10 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
-import { getIsLoggedIn } from "../../store/users";
+import { getIsLoggedIn } from "../../store/user";
 import NavProfile from "./navProfile";
 const NavBar = () => {
     const isLoggedIn = useSelector(getIsLoggedIn());
-    console.log(isLoggedIn);
     return (
         <nav className="navbar bg-light mb-3">
                <div className="container-fluid">

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import TextField from "../common/form/textField";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getAuthErrors, login } from "../../store/users";
+import { getAuthErrors, login } from "../../store/user";
 import * as yup from "yup";
 
 const LoginForm = () => {
