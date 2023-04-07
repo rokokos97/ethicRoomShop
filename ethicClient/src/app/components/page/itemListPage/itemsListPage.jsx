@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { getItems, getItemsLoadingStatus } from "../../../store/items";
 import ItemCard from "../../ui/itemCard";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Pagination from "../../common/pagination";
 import { paginate } from "../../../utils/paginate";
 import {
@@ -44,6 +44,8 @@ const ItemsListPage = () => {
       )
       : selectedCategory
         ? data.filter((item) => {
+          console.log("selectedCategory", selectedCategory._id);
+          console.log(item.category);
           return item.category[0] === selectedCategory._id;
         })
         : data;
@@ -56,20 +58,16 @@ const ItemsListPage = () => {
       { !isItemsLoading && !isCategoryLoading &&
           <div className="mx-auto m-5 m-75">
           <div className="d-flex justify-content-center mx-2">
+            <NavLink to="newItem">Add new item</NavLink>
             <div>
               <GroupList
                 selectedItem={selectedCategory}
                 items={categories}
                 onItemSelect={handleCategorySelect}
+                onChange={handleSearchQuery}
+                value={searchQuery}
               />
             </div>
-            <input
-              type="text"
-              name="searchQuery"
-              placeholder="Search..."
-              onChange={handleSearchQuery}
-              value={searchQuery}
-            />
           </div>
 
           <ul className="d-flex flex-wrap list-unstyled justify-content-center">
@@ -79,7 +77,7 @@ const ItemsListPage = () => {
                   key={index}
                   className="w-25 m-1 mb-5 p-2"
                 >
-                  <Link to={`/items/${item._id}`} ><ItemCard item={item}/></Link>
+                  <NavLink to={`/items/${item._id}`} ><ItemCard item={item}/></NavLink>
                 </li>
               ))
             }

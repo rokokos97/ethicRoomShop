@@ -6,27 +6,10 @@ const GroupList = ({
     valueProperty,
     contentProperty,
     onItemSelect,
-    selectedItem
+    selectedItem,
+    value,
+    onChange
 }) => {
-    if (!Array.isArray(items)) {
-        return (
-            <ul className="list-group">
-                {Object.keys(items).map((item) => (
-                    <li
-                        key={items[item][valueProperty]}
-                        className={
-                            "list-group-item" +
-                            (items[item] === selectedItem ? " active" : "")
-                        }
-                        onClick={() => onItemSelect(items[item])}
-                        role="button"
-                    >
-                        {items[item][contentProperty]}
-                    </li>
-                ))}
-            </ul>
-        );
-    }
     return (
         <>
             <div className="navbar navbar-expand-lg navbar-light bg-light">
@@ -50,12 +33,17 @@ const GroupList = ({
                             ))}
                         </ul>
                         <form action="">
-                            <input type="text"/>
+                            <input
+                              type="text"
+                              name="searchQuery"
+                              placeholder="Search..."
+                              onChange={onChange}
+                              value={value}
+                            />
                         </form>
                     </div>
                 </div>
             </div>
-
         </>
     );
 };
@@ -68,7 +56,9 @@ GroupList.propTypes = {
     valueProperty: PropTypes.string.isRequired,
     contentProperty: PropTypes.string.isRequired,
     onItemSelect: PropTypes.func,
-    selectedItem: PropTypes.object
+    selectedItem: PropTypes.object,
+    value: PropTypes.string,
+    onChange: PropTypes.func
 };
 
 export default GroupList;

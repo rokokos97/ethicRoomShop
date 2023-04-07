@@ -9,10 +9,10 @@ const AppLoader = ({ children }) => {
     const userId = localStorageService.getUserId();
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(loadCategoriesList());
-        dispatch(loadItemsList());
         if (userId) { dispatch(loadUser()); }
     }, []);
+        dispatch(loadCategoriesList());
+        dispatch(loadItemsList());
     return children;
 };
 

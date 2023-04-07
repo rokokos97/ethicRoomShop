@@ -25,13 +25,13 @@ const usersSlice = createSlice({
     initialState,
     reducers: {
         authRequestSuccess: (state, action) => {
-          console.log("action.payload", action.payload);
-          state.entities = action.payload;
+            state.entities = action.payload;
             state.auth = action.payload._id;
             state.isLoggedIn = true;
         },
         authRequestFailed: (state, action) => {
-            state.error = action.payload;
+          console.log("action.payload", action.payload);
+          state.error = action.payload;
         },
         userCreated: (state, action) => {
             state.entities.push(action.payload);
@@ -50,10 +50,10 @@ const usersSlice = createSlice({
             state.error = null;
         },
         userLoadRequestSuccess: (state, action) => {
-          console.log("action.payload", action.payload);
           state.entities = action.payload;
           state.auth = action.payload._id;
           state.isLoggedIn = true;
+          state.isLoading = false;
       }
     }
 });
@@ -67,6 +67,7 @@ const {
 } = actions;
 
 const authRequested = createAction("users/authRequested");
+const userLoadRequested = createAction("users/userLoadRequested");
 const userUpdateFailed = createAction("users/userUpdateFailed");
 const userUpdateRequested = createAction("users/userUpdateRequested");
 
@@ -76,8 +77,7 @@ export const signUp = (payload) =>
       try {
         const data = await authService.register(payload);
           localStorageService.setTokens(data);
-        console.log("data.user", data.user);
-        dispatch(authRequestSuccess(data.user));
+          dispatch(authRequestSuccess(data.user));
           history.push("/");
       } catch (error) {
           dispatch(authRequestFailed(error.message));
@@ -91,16 +91,14 @@ export const login =
         dispatch(authRequested());
         try {
           const data = await authService.login({ email, password });
-          console.log("data login from server", data);
           localStorageService.setTokens(data);
-          console.log("data.user", data.user);
           dispatch(authRequestSuccess(data.user));
           history.push(redirect);
         } catch (error) {
-            console.log(error);
-            const { code, message } = error.response.data.error;
+          console.log(error.response);
+          const { code, message } = error.response.data.error;
             if (code === 400) {
-                const errorMessage = generetaAuthError(message);
+              const errorMessage = generetaAuthError(message);
                 dispatch(authRequestFailed(errorMessage));
             } else {
                 dispatch(authRequestFailed(error.message));
@@ -123,6 +121,7 @@ export const updateUser = (payload) => async (dispatch) => {
     }
 };
 export const loadUser = () => async (dispatch) => {
+  dispatch(userLoadRequested());
   try {
     const { content } = await userService.getCurrentUser();
     dispatch(userLoadRequestSuccess({ ...content }));
@@ -131,6 +130,7 @@ export const loadUser = () => async (dispatch) => {
   }
 };
 export const getUser = () => (state) => state.user.entities;
+export const getIsLoadingUser = () => (state) => state.user.isLoading;
 export const getIsLoggedIn = () => (state) => state.user.isLoggedIn;
 export const getAuthErrors = () => (state) => state.user.error;
 export default usersReducer;

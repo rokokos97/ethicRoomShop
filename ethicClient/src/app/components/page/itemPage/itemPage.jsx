@@ -4,14 +4,12 @@ import { useSelector } from "react-redux";
 import { getItemById } from "../../../store/items";
 import { Image } from "react-bootstrap";
 import img from "../../../images/itemImage/blackTankTop2.jpeg";
-import { useHistory } from "react-router";
+import history from "../../../utils/history";
 import { useParams } from "react-router-dom";
 
 const ItemPage = () => {
-    const history = useHistory();
-    const params = useParams();
-  console.log(params);
-  const item = useSelector(getItemById(itemId));
+    const itemId = useParams();
+    const item = useSelector(getItemById(itemId));
     if (item) {
         return (
           <>

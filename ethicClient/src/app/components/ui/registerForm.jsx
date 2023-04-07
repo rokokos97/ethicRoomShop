@@ -24,6 +24,7 @@ const RegisterForm = () => {
         }));
     };
     const validateSchema = yup.object().shape({
+        licence: yup.boolean().oneOf([true], "You may not use our service without acknowledging the license agreement"),
         password: yup.string()
           .required("Password is required")
           .min(8, "Password has to be longer than 8 characters")
@@ -36,8 +37,7 @@ const RegisterForm = () => {
           .email("Email is not correct"),
         name: yup.string()
           .required("Name is requires")
-          .min(3, "Name must be at least 3 characters long"),
-        licence: yup.boolean().oneOf([true], "You may not use our service without acknowledging the license agreement")
+          .min(3, "Name must be at least 3 characters long")
     });
     useEffect(() => {
         validate();
