@@ -9,7 +9,10 @@ import {
   getCategoriesLoadingStatus
 } from "../../store/categories";
 import history from "../../utils/history";
-import { signUp } from "../../store/user";
+import { createItem } from "../../store/items";
+import axios from "axios";
+import configFile from "../../config.json";
+
 const AddNewItem = () => {
   const categoriesIsLoading = useSelector(getCategoriesLoadingStatus());
   const categoryList = useSelector(getCategories());
@@ -19,11 +22,13 @@ const AddNewItem = () => {
     price: "",
     description: "",
     composition: "",
-    images: "",
+    image: "",
     category: ""
   };
   const [data, setData] = useState(initialState);
+  const [imageUrl, setImageUrl] = useState("");
   const [errors, setErrors] = useState({});
+  const inputFileRef = React.useRef(null);
   const handleChange = (target) => {
     setData((prevState) => ({
       ...prevState,
@@ -64,14 +69,29 @@ const AddNewItem = () => {
   const handleClearForm = () => {
     setData(initialState);
   };
+  const handleChangeFile = async (event) => {
+    console.log(event.target.files);
+    try {
+      const formData = new FormData();
+      const imageFile = event.target.files[0];
+      formData.append("image", imageFile);
+      const { data } = await axios.post(configFile.apiEndpoint + "/upload/", formData);
+      const imageUrl = data.url;
+      setImageUrl(imageUrl);
+      console.log(imageUrl);
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     const isValid = validate();
     if (!isValid) return;
     const newData = {
-      ...data
+      ...data,
+      image: imageUrl
     };
-    dispatch(signUp(newData));
+    dispatch(createItem(newData));
   };
   return (
     <>
@@ -125,6 +145,17 @@ const AddNewItem = () => {
                   error={errors.category}
                 />
               }
+              <button
+                className="btn btn-primary"
+                onClick={() => { inputFileRef.current.click(); }}
+              >Add image
+              </button>
+              <input
+                ref={inputFileRef}
+                type="file"
+                hidden
+                onChange={handleChangeFile}
+              />
               <button
                 type="submit"
                 disabled={!isValid}

@@ -1,14 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import itemService from "../services/item.service";
-import isOutdated from "../utils/isOutdated";
 
 const itemsSlice = createSlice({
     name: "items",
     initialState: {
         entities: null,
         isLoading: true,
-        error: null,
-        lastFetch: null
+        error: null
     },
     reducers: {
         itemsRequested: (state) => {
@@ -16,26 +14,38 @@ const itemsSlice = createSlice({
         },
         itemsReceived: (state, action) => {
             state.entities = action.payload;
-            state.lastFetch = Date.now();
             state.isLoading = false;
         },
         itemsRequestFiled: (state, action) => {
             state.error = action.payload;
             state.isLoading = false;
         },
-        itemCreated: (state, action) => {
+        itemCreateRequested: (state) => {
+            state.isLoading = true;
+        },
+        itemCreateReceived: (state, action) => {
+            state.isLoading = false;
             state.entities.push(action.payload);
+        },
+        itemCreateRequestFiled: (state, action) => {
+            state.error = action.payload;
+            state.isLoading = false;
         }
     }
 });
 
 const { reducer: itemsReducer, actions } = itemsSlice;
-const { itemsRequested, itemsReceived, itemsRequestFiled } =
+const {
+    itemsRequested,
+    itemsReceived,
+    itemsRequestFiled,
+    itemCreateRequested,
+    itemCreateReceived,
+    itemCreateRequestFiled
+} =
     actions;
 
-export const loadItemsList = () => async (dispatch, getState) => {
-    const { lastFetch } = getState().items;
-    if (isOutdated(lastFetch)) {
+export const loadItemsList = () => async (dispatch) => {
         dispatch(itemsRequested());
         try {
             const { content } = await itemService.get();
@@ -43,6 +53,14 @@ export const loadItemsList = () => async (dispatch, getState) => {
         } catch (error) {
             dispatch(itemsRequestFiled(error.message));
         }
+};
+export const createItem = (payload) => async (dispatch) => {
+    dispatch(itemCreateRequested());
+    try {
+        const data = await itemService.create(payload);
+        dispatch(itemCreateReceived(data));
+    } catch (error) {
+        dispatch(itemCreateRequestFiled(error.message));
     }
 };
 export const getItems = () => (state) => state.items.entities;

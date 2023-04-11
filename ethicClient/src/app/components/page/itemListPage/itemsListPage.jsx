@@ -10,6 +10,7 @@ import {
   getCategoriesLoadingStatus
 } from "../../../store/categories";
 import GroupList from "../../common/groupList";
+import _ from "lodash";
 
 const ItemsListPage = () => {
   const isItemsLoading = useSelector(getItemsLoadingStatus());
@@ -17,6 +18,7 @@ const ItemsListPage = () => {
   const pageSize = 3;
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
+  const [initialSort, setInitialSort] = useState("asc");
   const [selectedCategory, setSelectedCategory] = useState();
   const isCategoryLoading = useSelector(getCategoriesLoadingStatus());
   const categories = useSelector(getCategories());
@@ -26,6 +28,11 @@ const ItemsListPage = () => {
   const handleCategorySelect = (item) => {
     if (searchQuery !== "") setSearchQuery("");
     setSelectedCategory(item);
+  };
+  const handleSort = (direction) => {
+    direction === "asc"
+      ? setInitialSort("desc")
+      : setInitialSort("asc");
   };
   const handleSearchQuery = ({ target }) => {
     setSelectedCategory(undefined);
@@ -44,32 +51,26 @@ const ItemsListPage = () => {
       )
       : selectedCategory
         ? data.filter((item) => {
-          console.log("selectedCategory", selectedCategory._id);
-          console.log(item.category);
           return item.category[0] === selectedCategory._id;
         })
         : data;
   }
   const filteredItems = filterItems(items);
-  const count = filteredItems.length;
-  const itemsCrop = paginate(filteredItems, currentPage, pageSize);
+  const sortedItems = _.orderBy(filteredItems, "price", initialSort);
+  const itemsCrop = paginate(sortedItems, currentPage, pageSize);
   return (
     <>
       { !isItemsLoading && !isCategoryLoading &&
-          <div className="mx-auto m-5 m-75">
-          <div className="d-flex justify-content-center mx-2">
-            <NavLink to="newItem">Add new item</NavLink>
-            <div>
+          <div className="mx-auto m-3 m-75">
               <GroupList
                 selectedItem={selectedCategory}
                 items={categories}
                 onItemSelect={handleCategorySelect}
                 onChange={handleSearchQuery}
                 value={searchQuery}
+                initialSort={initialSort}
+                onSort= {handleSort}
               />
-            </div>
-          </div>
-
           <ul className="d-flex flex-wrap list-unstyled justify-content-center">
             {
               !isItemsLoading && itemsCrop.map((item, index) => (
@@ -77,7 +78,10 @@ const ItemsListPage = () => {
                   key={index}
                   className="w-25 m-1 mb-5 p-2"
                 >
-                  <NavLink to={`/items/${item._id}`} ><ItemCard item={item}/></NavLink>
+                  <NavLink
+                    to={`/items/${item._id}`}
+                    className="link-dark nav-link"
+                  ><ItemCard item={item}/></NavLink>
                 </li>
               ))
             }
@@ -87,7 +91,7 @@ const ItemsListPage = () => {
               pageSize={pageSize}
               onPageChange={handlePageChange}
               currentPage={currentPage}
-              itemsCount={count}
+              itemsCount={sortedItems.length}
             />
           </div>
         </div>

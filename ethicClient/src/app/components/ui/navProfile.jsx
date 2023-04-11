@@ -13,7 +13,7 @@ const NavProfile = () => {
     return (
       <div className="dropdown w-100" onClick={toggleMenu}>
         <div className="btn dropdown-toggle d-flex align-items-center">
-          <div className="me-2">{user.name}</div>
+          <div className="me-2">{user.name.toUpperCase()}</div>
         </div>
         <div className={"w-100 dropdown-menu" + (isOpen ? " show" : "")}>
           <Link

@@ -30,7 +30,6 @@ const usersSlice = createSlice({
             state.isLoggedIn = true;
         },
         authRequestFailed: (state, action) => {
-          console.log("action.payload", action.payload);
           state.error = action.payload;
         },
         userCreated: (state, action) => {
@@ -95,8 +94,7 @@ export const login =
           dispatch(authRequestSuccess(data.user));
           history.push(redirect);
         } catch (error) {
-          console.log(error.response);
-          const { code, message } = error.response.data.error;
+          const { code, message } = error.response.data.errors;
             if (code === 400) {
               const errorMessage = generetaAuthError(message);
                 dispatch(authRequestFailed(errorMessage));

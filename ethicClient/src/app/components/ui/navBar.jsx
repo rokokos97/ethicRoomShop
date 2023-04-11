@@ -15,14 +15,16 @@ const NavBar = () => {
                             <h3>ETHIC</h3>
                         </NavLink>
                     </li>
-                    <li className="nav-item">
-                        <NavLink className="nav-link link-dark " aria-current="page" to="/addItem">
-                            <h3>Add new item</h3>
-                        </NavLink>
-                    </li>
                 </ul>
                 <div className="d-flex">
                     <ul className="nav">
+                        {isLoggedIn &&
+                          <li className="nav-item">
+                            <NavLink className="nav-link link-dark " aria-current="page" to="/addItem">
+                                ADD NEW ITEM
+                            </NavLink>
+                          </li>
+                        }
                         <li className="nav-item"><NavLink
                           className="nav-link link-dark"
                           aria-current="page"

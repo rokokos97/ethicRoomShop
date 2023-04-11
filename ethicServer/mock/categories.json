@@ -2,41 +2,41 @@
   {
     "_id": "67rdca3eeb7f6fgeed4718181",
     "name": "Dress",
-    "image": ""
+    "image": "/upload/dress.jpeg"
   },
   {
     "_id": "67rdca3eeb7f6fgeed4718151",
     "name": "Pants",
-    "image": ""
+    "image": "/upload/pants.jpg"
   },
   {
     "_id": "67rdca3eeb7f6fgeed4718161",
     "name": "Hoodies",
-    "image": ""
+    "image": "/upload/hoodies.jpeg"
   },
   {
     "_id": "67rdca3eeb7f6fgeed4718171",
     "name": "Kimono",
-    "image": ""
+    "image": "/upload/kimonos.jpeg"
   },
   {
     "_id": "67rdca3eeb7f6fgeed4718191",
     "name": "T-Shirts",
-    "image": ""
+    "image": "/upload/tshirts.jpeg"
   },
   {
     "_id": "67rdca3eeb7f6fgeed4718201",
     "name": "Body",
-    "image": ""
+    "image": "/upload/body.jpeg"
   },
   {
     "_id": "67rdca3eeb7f6fgeed4718211",
-    "name": "Outwear",
-    "image": ""
+    "name": "Outerwear",
+    "image": "/upload/outerwear.jpeg"
   },
   {
     "_id": "67rdca3eeb7f6fgeed4718221",
     "name": "Tops",
-    "image": ""
+    "image": "/upload/tops.jpeg"
   }
 ]

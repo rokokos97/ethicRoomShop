@@ -6,6 +6,13 @@ const itemService = {
     get: async () => {
         const req = await httpService.get(itemEndpoint);
         return req.data;
+    },
+    create: async (payload) => {
+        const { data } = await httpService.post(
+          itemEndpoint + "create",
+          payload
+        );
+        return data;
     }
 };
 export default itemService;
