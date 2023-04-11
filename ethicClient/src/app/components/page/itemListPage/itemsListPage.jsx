@@ -11,6 +11,7 @@ import {
 } from "../../../store/categories";
 import GroupList from "../../common/groupList";
 import _ from "lodash";
+import SearchLine from "../../ui/searchLine";
 
 const ItemsListPage = () => {
   const isItemsLoading = useSelector(getItemsLoadingStatus());
@@ -41,6 +42,9 @@ const ItemsListPage = () => {
   const handlePageChange = (pageIndex) => {
     setCurrentPage(pageIndex);
   };
+  const handleClear = () => {
+    setSelectedCategory(undefined);
+  };
   function filterItems(data) {
     return searchQuery
       ? data.filter(
@@ -62,15 +66,21 @@ const ItemsListPage = () => {
     <>
       { !isItemsLoading && !isCategoryLoading &&
           <div className="mx-auto m-3 m-75">
-              <GroupList
-                selectedItem={selectedCategory}
-                items={categories}
-                onItemSelect={handleCategorySelect}
+              <SearchLine
                 onChange={handleSearchQuery}
                 value={searchQuery}
                 initialSort={initialSort}
                 onSort= {handleSort}
               />
+              <div>
+                <GroupList
+                  selectedItem={selectedCategory}
+                  items={categories}
+                  onItemSelect={handleCategorySelect}
+                  onClear={handleClear}
+                />
+
+              </div>
           <ul className="d-flex flex-wrap list-unstyled justify-content-center">
             {
               !isItemsLoading && itemsCrop.map((item, index) => (
