@@ -17,7 +17,6 @@ router.post('/create', auth, async (req, res)=>{
   const item = req.body;
   try {
     const exists = await Item.findOne({name: item.name});
-
     if (exists) {
       return res.status(400).send(`${item.name} exists`);
     }
@@ -43,6 +42,5 @@ router.delete('/:itemId', auth, async (req, res) => {
     })
   }
 })
-
 
 module.exports = router;

@@ -1,99 +1,100 @@
-import { createSlice } from "@reduxjs/toolkit";
-import itemService from "../services/item.service";
+import {createSlice} from '@reduxjs/toolkit';
+import itemService from '../services/item.service';
 
 const itemsSlice = createSlice({
-    name: "items",
-    initialState: {
-        entities: null,
-        isLoading: true,
-        error: null
+  name: 'items',
+  initialState: {
+    entities: null,
+    isLoading: true,
+    error: null,
+  },
+  reducers: {
+    itemsRequested: (state) => {
+      state.isLoading = true;
     },
-    reducers: {
-        itemsRequested: (state) => {
-            state.isLoading = true;
-        },
-        itemsReceived: (state, action) => {
-            state.entities = action.payload;
-            state.isLoading = false;
-        },
-        itemsRequestFiled: (state, action) => {
-            state.error = action.payload;
-            state.isLoading = false;
-        },
-        itemCreateRequested: (state) => {
-            state.isLoading = true;
-        },
-        itemCreateReceived: (state, action) => {
-            state.isLoading = false;
-            state.entities.push(action.payload);
-            alert("new item was created");
-        },
-        itemCreateRequestFiled: (state, action) => {
-            state.error = action.payload;
-            state.isLoading = false;
-        },
-        itemDeleteRequested(state) {
-            state.isLoading = true;
-        },
-        itemDeleteReceived(state, action) {
-            state.isLoading = false;
-            state.entities = state.entities.filter(item => item._id !== action.payload);
-        },
-        itemDeleteRequestFailed(state, action) {
-            state.isLoading = false;
-            state.error = action.payload;
-        }
-    }
+    itemsReceived: (state, action) => {
+      state.entities = action.payload;
+      state.isLoading = false;
+    },
+    itemsRequestFiled: (state, action) => {
+      state.error = action.payload;
+      state.isLoading = false;
+    },
+    itemCreateRequested: (state) => {
+      state.isLoading = true;
+    },
+    itemCreateReceived: (state, action) => {
+      state.isLoading = false;
+      state.entities.push(action.payload);
+      alert('new item was created');
+    },
+    itemCreateRequestFiled: (state, action) => {
+      state.error = action.payload;
+      state.isLoading = false;
+    },
+    itemDeleteRequested(state) {
+      state.isLoading = true;
+    },
+    itemDeleteReceived(state, action) {
+      state.isLoading = false;
+      state.entities = state.entities
+          .filter((item) => item._id !== action.payload);
+    },
+    itemDeleteRequestFailed(state, action) {
+      state.isLoading = false;
+      state.error = action.payload;
+    },
+  },
 });
 
-const { reducer: itemsReducer, actions } = itemsSlice;
+const {reducer: itemsReducer, actions} = itemsSlice;
 const {
-    itemsRequested,
-    itemsReceived,
-    itemsRequestFiled,
-    itemCreateRequested,
-    itemCreateReceived,
-    itemCreateRequestFiled,
+  itemsRequested,
+  itemsReceived,
+  itemsRequestFiled,
+  itemCreateRequested,
+  itemCreateReceived,
+  itemCreateRequestFiled,
   itemDeleteRequested,
   itemDeleteReceived,
-  itemDeleteRequestFailed
+  itemDeleteRequestFailed,
 
 } =
     actions;
 
 export const loadItemsList = () => async (dispatch) => {
-        dispatch(itemsRequested());
-        try {
-            const { content } = await itemService.get();
-            dispatch(itemsReceived(content));
-        } catch (error) {
-            dispatch(itemsRequestFiled(error.message));
-        }
+  dispatch(itemsRequested());
+  try {
+    const {content} = await itemService.get();
+    dispatch(itemsReceived(content));
+  } catch (error) {
+    dispatch(itemsRequestFiled(error.message));
+  }
 };
 export const createItem = (payload) => async (dispatch) => {
-    dispatch(itemCreateRequested());
-    try {
-        const { content } = await itemService.create(payload);
-        await dispatch(itemCreateReceived(content));
-    } catch (error) {
-        dispatch(itemCreateRequestFiled(error.message));
-    }
+  dispatch(itemCreateRequested());
+  try {
+    const {content} = await itemService.create(payload);
+    await dispatch(itemCreateReceived(content));
+  } catch (error) {
+    dispatch(itemCreateRequestFiled(error.message));
+  }
 };
 export const deleteItem = (id) => async (dispatch) => {
-    dispatch(itemDeleteRequested());
-    try {
-        await itemService.delete(id);
-        dispatch(itemDeleteReceived(id));
-    } catch (e) {
-        dispatch(itemDeleteRequestFailed(e.message));
-    }
+  dispatch(itemDeleteRequested());
+  try {
+    await itemService.delete(id);
+    dispatch(itemDeleteReceived(id));
+  } catch (e) {
+    dispatch(itemDeleteRequestFailed(e.message));
+  }
 };
 export const getItems = () => (state) => state.items.entities;
 export const getItemsLoadingStatus = () => (state) =>
-    state.items.isLoading;
+  state.items.isLoading;
 export const getItemById = (id) => (state) => {
-    if (state.items.entities) {
-        return state.items.entities.find((p) => p._id === id);
-    }
+  if (state.items.entities) {
+    return state.items.entities.find((p) => p._id === id);
+  }
 };
 export default itemsReducer;

@@ -1,5 +1,5 @@
-import React from "react";
-import { Carousel, CarouselItem } from "react-bootstrap";
+import React from 'react';
+import {Carousel, CarouselItem} from 'react-bootstrap';
 
 const CarouselBox = () => {
   return (

@@ -1,11 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const SearchLine = ({
   value,
   onChange,
   initialSort,
-  onSort
+  onSort,
 }) => {
   return (
     <>
@@ -19,12 +19,14 @@ const SearchLine = ({
           value={value}
         />
         <span className="input-group-text" id="addon-wrapping">
-                    <i
-                      className={`bi bi-sort-${(initialSort === "asc") ? "up" : "down"}`}
-                      role="button"
-                      onClick={() => { onSort(initialSort); }}
-                    ></i>
-                </span>
+          <i
+            className={`bi bi-sort-${(initialSort === 'asc') ? 'up' : 'down'}`}
+            role="button"
+            onClick={() => {
+              onSort(initialSort);
+            }}
+          ></i>
+        </span>
       </div>
     </>
   );
@@ -33,7 +35,6 @@ SearchLine.propTypes = {
   value: PropTypes.string,
   onChange: PropTypes.func,
   initialSort: PropTypes.string,
-  onSort: PropTypes.func
+  onSort: PropTypes.func,
 };
-
 export default SearchLine;

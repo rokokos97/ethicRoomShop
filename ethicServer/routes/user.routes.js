@@ -14,16 +14,6 @@ router.patch('/:userId', auth, async (req, res) => {
     })
   }
 })
-// router.get('/', auth, async (req, res) => {
-//   try {
-//     const list = await User.find()
-//     res.send(list)
-//   } catch (e) {
-//     res.status(500).json({
-//       message: 'Server error. Please try later...'
-//     })
-//   }
-// })
 router.get('/:userId', auth, async (req, res) => {
   try {
     const { userId } = req.params

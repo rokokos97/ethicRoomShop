@@ -1,70 +1,71 @@
-import React, { useEffect, useState } from "react";
-import TextField from "../common/form/textField";
-import { useDispatch, useSelector } from "react-redux";
-import * as yup from "yup";
-import TextAreaField from "../common/form/textAreaField";
-import SelectField from "../common/form/selectField";
+import React, {useEffect, useState} from 'react';
+import TextField from '../common/form/textField';
+import {useDispatch, useSelector} from 'react-redux';
+import * as yup from 'yup';
+import TextAreaField from '../common/form/textAreaField';
+import SelectField from '../common/form/selectField';
 import {
   getCategories,
-  getCategoriesLoadingStatus
-} from "../../store/categories";
-import history from "../../utils/history";
-import { createItem } from "../../store/items";
-import axios from "axios";
-import configFile from "../../config.json";
-import { useNavigate } from "react-router-dom";
+  getCategoriesLoadingStatus,
+} from '../../store/categories';
+import history from '../../utils/history';
+import {createItem} from '../../store/items';
+import axios from 'axios';
+import configFile from '../../config.json';
+import {useNavigate} from 'react-router-dom';
 
 const AddNewItem = () => {
   const categoriesIsLoading = useSelector(getCategoriesLoadingStatus());
   const categoryList = useSelector(getCategories());
   const dispatch = useDispatch();
   const initialState = {
-    name: "",
-    price: "",
-    description: "",
-    composition: "",
-    image: "",
-    category: ""
+    name: '',
+    price: '',
+    description: '',
+    composition: '',
+    image: '',
+    category: '',
   };
   const [data, setData] = useState(initialState);
-  const [imageUrl, setImageUrl] = useState("");
+  const [imageUrl, setImageUrl] = useState('');
   const [errors, setErrors] = useState({});
   const inputFileRef = React.useRef(null);
   const navigate = useNavigate();
   const handleChange = (target) => {
     setData((prevState) => ({
       ...prevState,
-      [target.name]: target.value
+      [target.name]: target.value,
     }));
   };
   const validateSchema = yup.object().shape({
     category: yup.string()
-      .required("Category is required"),
+        .required('Category is required'),
     composition: yup.string()
-      .required("Composition is required"),
+        .required('Composition is required'),
     description: yup.string()
-      .required("Description is requires")
-      .min(20, "Name must be at least 20 characters long"),
+        .required('Description is requires')
+        .min(20, 'Name must be at least 20 characters long'),
     price: yup.string()
-      .required("Price is required")
-      .matches(/(?=.*^[0-9]{1,6}$)/, "Price must contain at least only numbers")
-      .max(5, "Price must not be longer than 5 characters"),
+        .required('Price is required')
+        .matches(/(?=.*^[0-9]{1,6}$)/, 'Price must contain' +
+          ' at least only numbers')
+        .max(5, 'Price must not be longer than 5 characters'),
     name: yup.string()
-      .required("Name is requires")
-      .min(3, "Name must be at least 3 characters long")
+        .required('Name is requires')
+        .min(3, 'Name must be at least 3 characters long'),
   });
   useEffect(() => {
     validate();
   }, [data]);
   const validate = () => {
     validateSchema
-      .validate(data)
-      .then(() => {
-        setErrors({});
-      })
-      .catch((err) => {
-        setErrors({ [err.path]: err.message });
-      });
+        .validate(data)
+        .then(() => {
+          setErrors({});
+        })
+        .catch((err) => {
+          setErrors({[err.path]: err.message});
+        });
     return Object.keys(errors).length === 0;
   };
   const isValid = Object.keys(errors).length === 0;
@@ -75,8 +76,9 @@ const AddNewItem = () => {
     try {
       const formData = new FormData();
       const imageFile = event.target.files[0];
-      formData.append("image", imageFile);
-      const { data } = await axios.post(configFile.apiEndpoint + "/upload/", formData);
+      formData.append('image', imageFile);
+      const {data} = await axios
+          .post(configFile.apiEndpoint + '/upload/', formData);
       const imageUrl = data.url;
       setImageUrl(imageUrl);
     } catch (e) {
@@ -89,16 +91,22 @@ const AddNewItem = () => {
     if (!isValid) return;
     const newData = {
       ...data,
-      image: imageUrl
+      image: imageUrl,
     };
     dispatch(createItem(newData));
-    navigate("/items");
+    navigate('/items');
   };
   return (
     <>
       <div className="d-flex justify-content-between m-5">
-        <i className="bi bi-arrow-left" role="button" onClick={() => history.goBack()}>back to catalogue</i>
-        <i className="bi bi-x-lg" role="button" onClick={() => history.goBack()}/>
+        <i
+          className="bi bi-arrow-left"
+          role="button"
+          onClick={() => history.goBack()}>back to catalogue</i>
+        <i
+          className="bi bi-x-lg"
+          role="button"
+          onClick={() => history.goBack()}/>
       </div>
       <div className=" container mt-5">
         <div className="row">
@@ -149,7 +157,9 @@ const AddNewItem = () => {
               <button
                 className="btn btn-primary w-100 mb-1"
                 type="button"
-                onClick={() => { inputFileRef.current.click(); }}
+                onClick={() => {
+                  inputFileRef.current.click();
+                }}
               >
                 <i className="bi bi-box-arrow-in-down m-2"/>
                 Upload image

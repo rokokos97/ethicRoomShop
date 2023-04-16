@@ -1,5 +1,5 @@
-import React from "react";
-import { Accordion } from "react-bootstrap";
+import React from 'react';
+import {Accordion} from 'react-bootstrap';
 
 const AccordionBox = () => {
   return (
@@ -84,5 +84,4 @@ const AccordionBox = () => {
     </>
   );
 };
-
 export default AccordionBox;

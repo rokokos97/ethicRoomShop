@@ -1,3 +1,74 @@
 [
-
+  {
+    "_id": "643c72101f50e153ac821281",
+    "name": "Party dress",
+    "price":3400,
+    "category":"6433317b36de620b0f4c5190",
+    "description":"Dress with transformer chains",
+    "composition":"polyester: 100%",
+    "image":"/upload/transform-dress.jpeg"
+  },
+  {
+    "_id":"643c738c76cfd1ee8082eece",
+    "name":"Dark kimono",
+    "price":3400,
+    "category":"6433317b36de620b0f4c5193",
+    "description":"Long kimono with embroidery",
+    "composition":"viscose: 50%  linen: 50%",
+    "image":"/upload/dark-kimono.jpeg"
+    },
+  {
+    "_id": "643c7626f4073d76a4505f24",
+    "name": "Mad cat",
+    "price": 980,
+    "category": "6433317b36de620b0f4c5194",
+    "description": "T-shirt with fun embroidery",
+    "composition": "Cotton: 98%  Elastane: 2%",
+    "image": "/upload/tshirts.jpeg"
+  },
+  {
+    "_id":"643c77768a2b1deff704c770",
+    "name":"Winter body",
+    "price":2200,
+    "category":"6433317b36de620b0f4c5195",
+    "description":"Warm clothes for cold winter",
+    "composition":"cashmere: 100%",
+    "image":"/upload/bodys.jpeg"
+  },
+  {
+    "_id":"643c78cf88a9f7eaf279cbbe",
+    "name":"Undershirt “Kyiv metro”",
+    "price":980,
+    "category":"6433317b36de620b0f4c5197",
+    "description":"Undershirt with“Kyiv metro” logo",
+    "composition":"Сotton: 100%",
+    "image":"/upload/Shirt-metro.jpeg"
+  },
+  {
+    "_id":"643c7b3fecd0c6f15b0d84ba",
+    "name":"Tiger sweetshot",
+    "price":"2800",
+    "category":"6433317b36de620b0f4c5192",
+    "description":"Make your mood with our tiger",
+    "composition":"Cotton: 100%",
+    "image":"/upload/hoodies.jpeg"
+    },
+  {
+    "_id":"643c7bca3ed44f48d91e10d7",
+    "name":"White cargo pants",
+    "price":"2400",
+    "category":"6433317b36de620b0f4c5191",
+    "description":"Pants for every day and any weather",
+    "composition":"viscose: 50%  linen: 50%",
+    "image":"/upload/pants.jpg"
+    },
+  {
+    "_id":"643c7d74a02b2f4290b014a0",
+    "name":"Kimono coat",
+    "price":"4800",
+    "category":"6433317b36de620b0f4c5196",
+    "description":"Warm and gentle coat",
+    "composition":"imitative cashmere: 100%",
+    "image":"/upload/outerwear.jpeg"
+  }
 ]

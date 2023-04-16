@@ -5,18 +5,17 @@ const User = require('../models/User');
 const tokenService = require('../services/token.service');
 const router = express.Router({mergeParams: true});
 
-
 router.post('/signUp', [
   check('email', 'email is not correct')
-      .isEmail(),
+    .isEmail(),
   check('password', 'password have be more secure')
-      .isStrongPassword({
-        minLength: 8,
-        minSymbols: 1,
-        minUppercase: 1,
-        minLowercase: 1,
-        minNumbers:1,
-      }),
+    .isStrongPassword({
+      minLength: 8,
+      minSymbols: 1,
+      minUppercase: 1,
+      minLowercase: 1,
+      minNumbers:1,
+    }),
   async (req, res) => {
     try {
       const errors = validationResult(req);

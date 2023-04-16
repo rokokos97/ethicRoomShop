@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
-import { getCart } from "../../store/cart";
+import {useState, useEffect} from 'react';
+import {useSelector} from 'react-redux';
+import {getCart} from '../../store/cart';
 
 const useCart = () => {
   const cart = useSelector(getCart());
@@ -10,5 +10,4 @@ const useCart = () => {
   }, [cart]);
   return isCartFill;
 };
-
 export default useCart;

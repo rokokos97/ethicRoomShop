@@ -4,8 +4,7 @@ const schema = new Schema({
   name: {type: String},
   email: {type: String, required: true, unique: true},
   password: {type: String, required: true, unique: true},
-  sex: {type: String, enum: ['male', 'female', 'other']},
-  cart: [{ type: Schema.Types.ObjectId, ref: 'Item' }]
+  sex: {type: String, enum: ['male', 'female', 'other']}
 }, {
   timestamps: true
 })

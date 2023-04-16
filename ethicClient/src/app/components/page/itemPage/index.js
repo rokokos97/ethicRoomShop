@@ -1,2 +1,2 @@
-import ItemPage from "./itemPage";
+import ItemPage from './itemPage';
 export default ItemPage;
