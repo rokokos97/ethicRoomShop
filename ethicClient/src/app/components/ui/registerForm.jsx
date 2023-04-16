@@ -17,6 +17,16 @@ const RegisterForm = () => {
         licence: false
     });
     const [errors, setErrors] = useState({});
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const isValid = validate();
+        if (!isValid) return;
+        const newData = {
+            ...data
+        };
+        dispatch(signUp(newData));
+        navigate("/", { replace: true });
+    };
 
     const handleChange = (target) => {
         setData((prevState) => ({
@@ -52,21 +62,9 @@ const RegisterForm = () => {
           .catch((err) => {
               setErrors({ [err.path]: err.message });
           });
-
         return Object.keys(errors).length === 0;
     };
     const isValid = Object.keys(errors).length === 0;
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const isValid = validate();
-        if (!isValid) return;
-        const newData = {
-            ...data
-        };
-        dispatch(signUp(newData));
-        navigate("/", { replace: true });
-    };
-
     return (
       <>
           <h3 className="mb-4 text-center">Register</h3>

@@ -12,8 +12,6 @@ router.get('/', async (req, res) => {
     });
   }
 });
-router.patch('/:id', async (req, res) => {
-});
 router.post('/create', async (req, res)=>{
   const item = req.body;
   try {
@@ -32,5 +30,18 @@ router.post('/create', async (req, res)=>{
     });
   }
 })
+router.delete('/:itemId', async (req, res) => {
+  try {
+    const { itemId } = req.params
+    const removedItem = await Item.findById(itemId)
+    await removedItem.remove()
+    return res.send(null)
+  } catch (e) {
+    res.status(500).json({
+      message: 'Server error. Please try later...'
+    })
+  }
+})
+
 
 module.exports = router;

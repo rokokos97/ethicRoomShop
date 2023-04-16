@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getIsLoadingUser, getUser } from "../../store/user";
-import { getCart } from "../../store/cart";
+import useCart from "../hooks/useCart";
 
 const NavProfile = () => {
-    const isUserLoading = useSelector(getIsLoadingUser());
-    const [isOpen, setOpen] = useState(false);
-    const user = useSelector(getUser());
-    const cart = useSelector(getCart());
+  const isUserLoading = useSelector(getIsLoadingUser());
+  const [isOpen, setOpen] = useState(false);
+  const user = useSelector(getUser());
+  const isCart = useCart();
   const toggleMenu = () => {
         setOpen((prevState) => !prevState);
     };
@@ -18,10 +18,10 @@ const NavProfile = () => {
         <div className="btn dropdown-toggle d-flex align-items-center ">
           <div className="me-2 position-relative">
             {user.name.toUpperCase()}
-            {cart.length > 0
+            {isCart
               ? <span
-              className="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger">
-              {cart.length}
+              className="position-absolute top-0 start-0 translate-middle badge bg-dark rounded-pill bg-danger">
+              {isCart}
             </span>
             : ""}
           </div>
@@ -35,7 +35,7 @@ const NavProfile = () => {
             <i className="bi bi-person mx-1"><span className="mx-2">Profile</span></i>
           </Link>
           <Link to="/user/cart" className="dropdown-item">
-            <i className={`bi bi-bag${(cart.length > 0) ? "-fill" : ""} mx-1`}>
+            <i className={`bi bi-bag${(isCart) ? "-fill" : ""} mx-1`}>
               <span className="mx-2">Cart</span>
             </i>
           </Link>

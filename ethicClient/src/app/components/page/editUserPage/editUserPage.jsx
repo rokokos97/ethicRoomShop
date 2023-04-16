@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { validator } from "../../../utils/ validator";
 import TextField from "../../common/form/textField";
 import RadioField from "../../common/form/radio.Field";
 import { useSelector, useDispatch } from "react-redux";
 import { getUser, updateUser } from "../../../store/user";
 import { useNavigate } from "react-router-dom";
 import BackHistoryBlock from "../../common/backButton";
+import * as yup from "yup";
 
 const EditUserPage = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -39,22 +39,14 @@ const EditUserPage = () => {
         }
     }, [data]);
 
-    const validatorConfog = {
-        email: {
-            isRequired: {
-                message: "Электронная почта обязательна для заполнения"
-            },
-            isEmail: {
-                message: "Email введен некорректно"
-            }
-        },
-
-        name: {
-            isRequired: {
-                message: "Введите ваше имя"
-            }
-        }
-    };
+    const validateSchema = yup.object().shape({
+        email: yup.string()
+          .required("Email is required")
+          .email("Email is not correct"),
+        name: yup.string()
+          .required("Name is requires")
+          .min(3, "Name must be at least 3 characters long")
+    });
     useEffect(() => validate(), [data]);
     const handleChange = (target) => {
         setData((prevState) => ({
@@ -63,8 +55,14 @@ const EditUserPage = () => {
         }));
     };
     const validate = () => {
-        const errors = validator(data, validatorConfog);
-        setErrors(errors);
+        validateSchema
+          .validate(data)
+          .then(() => {
+              setErrors({});
+          })
+          .catch((err) => {
+              setErrors({ [err.path]: err.message });
+          });
         return Object.keys(errors).length === 0;
     };
     const isValid = Object.keys(errors).length === 0;

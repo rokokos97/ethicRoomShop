@@ -31,6 +31,17 @@ const itemsSlice = createSlice({
         itemCreateRequestFiled: (state, action) => {
             state.error = action.payload;
             state.isLoading = false;
+        },
+        itemDeleteRequested(state) {
+            state.isLoading = true;
+        },
+        itemDeleteReceived(state, action) {
+            state.isLoading = false;
+            state.entities = state.entities.filter(item => item._id !== action.payload);
+        },
+        itemDeleteRequestFailed(state, action) {
+            state.isLoading = false;
+            state.error = action.payload;
         }
     }
 });
@@ -42,7 +53,11 @@ const {
     itemsRequestFiled,
     itemCreateRequested,
     itemCreateReceived,
-    itemCreateRequestFiled
+    itemCreateRequestFiled,
+  itemDeleteRequested,
+  itemDeleteReceived,
+  itemDeleteRequestFailed
+
 } =
     actions;
 
@@ -62,6 +77,15 @@ export const createItem = (payload) => async (dispatch) => {
         await dispatch(itemCreateReceived(content));
     } catch (error) {
         dispatch(itemCreateRequestFiled(error.message));
+    }
+};
+export const deleteItem = (id) => async (dispatch) => {
+    dispatch(itemDeleteRequested());
+    try {
+        await itemService.delete(id);
+        dispatch(itemDeleteReceived(id));
+    } catch (e) {
+        dispatch(itemDeleteRequestFailed(e.message));
     }
 };
 export const getItems = () => (state) => state.items.entities;
