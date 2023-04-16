@@ -8,11 +8,9 @@ const httpAuth = axios.create({
         key: process.env.REACT_APP_FIREBASE_KEY
     }
 });
-
 const authService = {
     register: async (payload) => {
         const { data } = await httpAuth.post(`signUp`, payload);
-        console.log(data);
         return data;
     },
     login: async ({ email, password }) => {
@@ -21,7 +19,6 @@ const authService = {
             password,
             returnSecureToken: true
         });
-        console.log(data);
         return data;
     },
     refresh: async () => {

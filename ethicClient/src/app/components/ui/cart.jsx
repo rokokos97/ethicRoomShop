@@ -2,11 +2,9 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addItemInCart,
-  // deleteItemFromCart,
   getCart,
   removeOneItemFromCart
 } from "../../store/cart";
-import img from "../../images/aboutUs01.png";
 import BackHistoryBlock from "../common/backButton";
 
 const Cart = () => {
@@ -15,9 +13,6 @@ const Cart = () => {
   const handleAdd = (item) => {
     dispatch(addItemInCart(item));
   };
-  // const handleRemoveFromCart = (item) => {
-  //   dispatch(deleteItemFromCart(item));
-  // };
   const handleRemoveOneItem = (itemId) => {
     dispatch(removeOneItemFromCart(itemId));
   };
@@ -38,8 +33,7 @@ const Cart = () => {
     return newArray;
   };
   function totalAmount(cart) {
-    const amount = cart.map(e => e.totalprice).reduce((a, b) => Math.floor(a + b));
-    return amount;
+    return cart.map(e => e.totalprice).reduce((a, b) => Math.floor(a + b));
   }
   const newCart = (totalIncreace(cart));
   return (
@@ -48,7 +42,7 @@ const Cart = () => {
       {
         newCart.length > 0
           ? <div className="card mb-3">
-            <img src={img} className="card-img-top" alt="..."/>
+            <img src={`http://localhost:8080/api/upload/aboutUs01.png`} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h5 className="card-title text-sm-center">YOUR CART</h5>
               {newCart.map((item, index) => (

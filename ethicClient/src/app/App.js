@@ -12,25 +12,25 @@ import AddNewItem from "./components/ui/addNewItem";
 import UserLayout from "./layouts/userLayout";
 import ItemsLayout from "./layouts/ItemsLayout";
 function App() {
-    return (
-        <div>
-          <NavBar/>
-                <AppLoader>
-                <Routes>
-                    <Route index element={<MainLayout/>} />
-                    <Route path="/addItem" element={<AddNewItem/>}/>
-                    <Route path="/items/*" element={<ItemsLayout/>}/>
-                    <Route path="/info" element={<InfoLayout/>}/>
-                    <Route path="/about" element={<AboutLayout/>}/>
-                    <Route path="/login/*" element={<LoginLayout/>}/>
-                    <Route path="/logout" element={<LogOutLayout/>}/>
-                    <Route path="/user/*" element={<UserLayout/>}/>
-                    <Route path="*" element={<Navigate to="/"/>}/>
-                </Routes>
-                </AppLoader>
-            <ToastContainer />
-        </div>
-    );
+  return (
+    <div>
+      <NavBar/>
+      <AppLoader>
+        <Routes>
+          <Route index element={<MainLayout/>} />
+          <Route path="/addItem" element={<AddNewItem/>}/>
+          <Route path="/info" element={<InfoLayout/>}/>
+          <Route path="/about" element={<AboutLayout/>}/>
+          <Route path="/logout" element={<LogOutLayout/>}/>
+          <Route path="/items/*" element={<ItemsLayout/>}/>
+          <Route path="/login/*" element={<LoginLayout/>}/>
+          <Route path="/user/*" element={<UserLayout/>}/>
+          <Route path="*" element={<Navigate to="/"/>}/>
+        </Routes>
+      </AppLoader>
+      <ToastContainer />
+    </div>
+  );
 }
 
 export default App;

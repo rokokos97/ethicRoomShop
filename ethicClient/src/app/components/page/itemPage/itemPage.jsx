@@ -13,7 +13,6 @@ const ItemPage = () => {
   const { itemId } = useParams();
   const isLoggedIn = useSelector(getIsLoggedIn());
   const item = useSelector(getItemById(itemId));
-  console.log(isLoggedIn);
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(addItemInCart(item));
@@ -63,7 +62,12 @@ const ItemPage = () => {
           </>
         );
     } else {
-        return <h1>Loading...</h1>;
+        return (
+          <>
+            <BackHistoryBlock/>
+            <h1 className="text-center">{`Item with id "${itemId}" is not defined in our shop...`}</h1>
+          </>
+        );
     }
 };
 

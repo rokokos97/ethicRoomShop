@@ -149,7 +149,7 @@ const AddNewItem = () => {
                 />
               }
               <button
-                className="btn btn-primary"
+                className="btn btn-primary w-100 mb-1"
                 type="button"
                 onClick={() => { inputFileRef.current.click(); }}
               >Add image
@@ -161,18 +161,18 @@ const AddNewItem = () => {
                 onChange={handleChangeFile}
               />
               <button
-                type="submit"
-                disabled={!isValid}
-                className="btn btn-secondary w-100 mx-auto m-1"
-              >
-                Add new item
-              </button>
-              <button
                 type="button"
                 className="btn btn-secondary w-100 mx-auto m-1"
                 onClick={handleClearForm}
               >
                 Cleat form
+              </button>
+              <button
+                type="submit"
+                disabled={!isValid}
+                className="btn btn-secondary w-100 mx-auto m-1"
+              >
+                Add new item
               </button>
             </form>
           </div>

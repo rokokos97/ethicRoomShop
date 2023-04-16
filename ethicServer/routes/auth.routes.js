@@ -2,7 +2,6 @@ const express = require('express');
 const bcrypt = require('bcryptjs');
 const {check, validationResult} = require('express-validator');
 const User = require('../models/User');
-// const {generateUserData} = require('../utils/helpers');
 const tokenService = require('../services/token.service');
 const router = express.Router({mergeParams: true});
 
@@ -127,7 +126,7 @@ router.post('/token', async (req, res) => {
     res.status(201).send({...tokens, userId: data._id});
   } catch (e) {
     res.status(500).json({
-      message: 'Server error. Please repeat latter...!!',
+      message: 'Server error. Please repeat latter...',
     });
   }
 });

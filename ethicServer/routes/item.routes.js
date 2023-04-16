@@ -1,6 +1,7 @@
 const express = require('express');
 const Item = require('../models/Item');
 const router = express.Router({mergeParams: true});
+const auth = require('../middleware/auth.middleware')
 
 router.get('/', async (req, res) => {
   try {
@@ -12,7 +13,7 @@ router.get('/', async (req, res) => {
     });
   }
 });
-router.post('/create', async (req, res)=>{
+router.post('/create', auth, async (req, res)=>{
   const item = req.body;
   try {
     const exists = await Item.findOne({name: item.name});
@@ -30,7 +31,7 @@ router.post('/create', async (req, res)=>{
     });
   }
 })
-router.delete('/:itemId', async (req, res) => {
+router.delete('/:itemId', auth, async (req, res) => {
   try {
     const { itemId } = req.params
     const removedItem = await Item.findById(itemId)

@@ -8,8 +8,7 @@ import * as yup from "yup";
 const LoginForm = () => {
     const [data, setData] = useState({
         email: "",
-        password: "",
-        stayOn: false
+        password: ""
     });
     const loginError = useSelector(getAuthErrors());
     const dispatch = useDispatch();
@@ -71,7 +70,6 @@ const LoginForm = () => {
                 error={errors.password}
               />
               {loginError && <p className="text-danger">{loginError}</p>}
-
               <button
                 type="submit"
                 disabled={!isValid}
@@ -93,5 +91,4 @@ const LoginForm = () => {
       </>
     );
 };
-
 export default LoginForm;

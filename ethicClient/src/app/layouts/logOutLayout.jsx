@@ -6,7 +6,6 @@ import MainLayout from "./mainLayout";
 const LogOutLayout = () => {
     const dispatch = useDispatch();
     useEffect(() => {
-        console.log("logout");
         dispatch(logOut());
     }, []);
     return <MainLayout/>;

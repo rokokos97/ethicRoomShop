@@ -1,15 +1,12 @@
-import { useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import { useDispatch, useSelector } from "react-redux";
-import { getIsLoadingUser, loadUser } from "../../../store/user";
+import { useSelector } from "react-redux";
+import { getIsLoggedIn } from "../../../store/user";
+import { Navigate } from "react-router-dom";
 
 const UserLoader = ({ children }) => {
-    const dataStatus = useSelector(getIsLoadingUser());
-    const dispatch = useDispatch();
-    useEffect(() => {
-        if (!dataStatus) dispatch(loadUser());
-    }, []);
-    if (!dataStatus) return "Loading";
+    const isLogged = useSelector(getIsLoggedIn());
+    if (!isLogged) return <Navigate to="/login"/>;
     return children;
 };
 

@@ -19,14 +19,21 @@ class TokenService {
       data.refreshToken = refreshToken;
       return data.save();
     }
-    const token = await Token.create({user: userId, refreshToken});
-    return token;
+    return await Token.create({user: userId, refreshToken});
   }
   validateRefresh(refreshToken) {
     try {
       return jwt.verify(refreshToken, config.get('refreshSecret'));
     } catch (e) {
       return null;
+    }
+  }
+
+  validateAccess(accessToken) {
+    try {
+      return jwt.verify(accessToken, config.get('accessSecret'))
+    } catch (e) {
+      return null
     }
   }
   async findToken(refreshToken) {

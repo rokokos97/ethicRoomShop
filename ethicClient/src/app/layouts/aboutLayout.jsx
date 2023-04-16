@@ -1,13 +1,15 @@
 import React from "react";
-
-import img from "../images/aboutUs01.png";
 import { Image } from "react-bootstrap";
 import Footer from "../components/ui/footer";
 
 const AboutLayout = () => {
   return (
     <>
-      <Image src={img} alt="hot girl on the table" fluid/>
+      <Image
+        src={`http://localhost:8080/api/upload/aboutUs01.png`}
+        alt="hot girl on the table"
+        fluid
+      />
       <div className="w-75 mx-auto">
         <h2 className="text-center">About us</h2>
         <div
