@@ -72,7 +72,6 @@ const AddNewItem = () => {
     setData(initialState);
   };
   const handleChangeFile = async (event) => {
-    console.log(event.target.files);
     try {
       const formData = new FormData();
       const imageFile = event.target.files[0];
@@ -80,7 +79,6 @@ const AddNewItem = () => {
       const { data } = await axios.post(configFile.apiEndpoint + "/upload/", formData);
       const imageUrl = data.url;
       setImageUrl(imageUrl);
-      console.log(imageUrl);
     } catch (e) {
       console.log(e.message);
     }
@@ -152,7 +150,9 @@ const AddNewItem = () => {
                 className="btn btn-primary w-100 mb-1"
                 type="button"
                 onClick={() => { inputFileRef.current.click(); }}
-              >Add image
+              >
+                <i className="bi bi-box-arrow-in-down m-2"/>
+                Upload image
               </button>
               <input
                 ref={inputFileRef}

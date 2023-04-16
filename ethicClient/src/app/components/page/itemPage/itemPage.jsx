@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteItem, getItemById } from "../../../store/items";
 import { useNavigate, useParams } from "react-router-dom";
-import BackHistoryBlock from "../../common/backButton";
+import BackHistoryBlock from "../../common/backHistoryBlock";
 import { addItemInCart } from "../../../store/cart";
 import { getIsLoggedIn } from "../../../store/user";
 

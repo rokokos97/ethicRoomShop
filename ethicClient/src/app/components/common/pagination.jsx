@@ -14,11 +14,11 @@ const Pagination = ({ itemsCount, pageSize, onPageChange, currentPage }) => {
                         role="button"
                         className={
                             "page-item" +
-                            (page === currentPage ? "active-light" : "")
+                            (page === currentPage ? " active" : "")
                         }
                     >
                         <a
-                            className="page-link bg-dark link-light "
+                            className="page-link  link-dark"
                             onClick={() => {
                                 onPageChange(page);
                             }}

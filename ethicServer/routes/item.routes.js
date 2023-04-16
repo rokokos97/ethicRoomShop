@@ -27,7 +27,7 @@ router.post('/create', auth, async (req, res)=>{
     res.status(200).send(newItem);
   } catch (e) {
     res.status(500).json({
-      message: "Server has error. Try later"
+      message: 'Server error. Please try later...'
     });
   }
 })

@@ -5,7 +5,7 @@ import {
   getCart,
   removeOneItemFromCart
 } from "../../store/cart";
-import BackHistoryBlock from "../common/backButton";
+import BackHistoryBlock from "../common/backHistoryBlock";
 
 const Cart = () => {
   const dispatch = useDispatch();

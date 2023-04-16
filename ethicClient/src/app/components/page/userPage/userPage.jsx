@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
 import { getIsLoadingUser, getUser } from "../../../store/user";
 import { NavLink } from "react-router-dom";
-import BackHistoryBlock from "../../common/backButton";
+import BackHistoryBlock from "../../common/backHistoryBlock";
 const UserPage = () => {
     const isUserLoading = useSelector(getIsLoadingUser());
     const user = useSelector(getUser());

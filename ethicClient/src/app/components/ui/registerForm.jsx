@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import TextField from "../common/form/textField";
-import RadioField from "../common/form/radio.Field";
+import RadioField from "../common/form/radioField";
 import CheckBoxField from "../common/form/checkBoxField";
 import { signUp } from "../../store/user";
 import { useDispatch } from "react-redux";

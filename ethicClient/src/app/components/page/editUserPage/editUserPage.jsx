@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import TextField from "../../common/form/textField";
-import RadioField from "../../common/form/radio.Field";
+import RadioField from "../../common/form/radioField";
 import { useSelector, useDispatch } from "react-redux";
 import { getUser, updateUser } from "../../../store/user";
 import { useNavigate } from "react-router-dom";
-import BackHistoryBlock from "../../common/backButton";
+import BackHistoryBlock from "../../common/backHistoryBlock";
 import * as yup from "yup";
 
 const EditUserPage = () => {
