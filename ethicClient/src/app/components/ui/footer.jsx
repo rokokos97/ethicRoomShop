@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="
+    <footer className="
       bg-dark
       text-light
       p-4
@@ -19,7 +19,7 @@ const Footer = () => {
         to="/about"
         className="m-1 link-light text-decoration-none"
       >Contacts</Link>
-    </div>
+    </footer>
   );
 };
 export default Footer;
