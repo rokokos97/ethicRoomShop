@@ -2,27 +2,30 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
 import { getIsLoadingUser, getUser } from "../../../store/user";
-import history from "../../../utils/history";
+import { NavLink } from "react-router-dom";
+import BackHistoryBlock from "../../common/backButton";
 const UserPage = () => {
     const isUserLoading = useSelector(getIsLoadingUser());
     const user = useSelector(getUser());
   if (!isUserLoading) {
         return (
           <>
-            <div className="d-flex justify-content-between m-5">
-              <i className="bi bi-arrow-left" role="button" onClick={() => history.goBack()}>back to catalogue</i>
-              <i className="bi bi-x-lg" role="button" onClick={() => history.goBack()}/>
-            </div>
-            <div className=" container mt-5">
-              <div className="row">
-                <div className="card col-md-6 offset-md-3 shadow p-4">
-                  <h3>Name: {user.name}</h3>
-                  <h3>Email: {user.email}</h3>
-                  <h3>Sex: {user.sex}</h3>
-                </div>
+            <BackHistoryBlock/>
+            <div className="card text-center w-50 mx-auto">
+              <div className="card-header">
+                Hello {user.name}
               </div>
-            </div>
-            <div className="container d-flex">
+              <div className="card-body">
+                <p className="card-text">Name: {user.name}</p>
+                <p className="card-text">Email: {user.email}</p>
+                <p className="card-text">Sex: {user.sex}</p>
+                <NavLink to="edit" role="button">
+                  <button className="btn btn-secondary">Edit user info</button>
+                </NavLink>
+              </div>
+              <div className="card-footer text-muted">
+                Welcome to Ethic Room
+              </div>
             </div>
           </>
         );

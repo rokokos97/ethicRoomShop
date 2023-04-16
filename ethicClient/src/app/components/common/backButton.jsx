@@ -1,13 +1,14 @@
 import React from "react";
-import { useHistory } from "react-router";
-const BackHistoryButton = () => {
-    const history = useHistory();
+import history from "../../utils/history";
+import { useNavigate } from "react-router-dom";
+const BackHistoryBlock = () => {
+    const navigate = useNavigate();
     return (
-        <button className="btn btn-primary" onClick={() => history.goBack()}>
-            <i className="bi bi-caret-left"></i>
-            Назад
-        </button>
+      <div className="d-flex justify-content-between m-5">
+        <i className="bi bi-arrow-left" role="button" onClick={() => history.goBack()}>back to catalogue</i>
+        <i className="bi bi-x-lg" role="button" onClick={() => navigate("/")}/>
+      </div>
     );
 };
 
-export default BackHistoryButton;
+export default BackHistoryBlock;

@@ -4,10 +4,11 @@ import RadioField from "../common/form/radio.Field";
 import CheckBoxField from "../common/form/checkBoxField";
 import { signUp } from "../../store/user";
 import { useDispatch } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import * as yup from "yup";
 const RegisterForm = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [data, setData] = useState({
         name: "",
         email: "",
@@ -55,7 +56,6 @@ const RegisterForm = () => {
         return Object.keys(errors).length === 0;
     };
     const isValid = Object.keys(errors).length === 0;
-
     const handleSubmit = (e) => {
         e.preventDefault();
         const isValid = validate();
@@ -64,6 +64,7 @@ const RegisterForm = () => {
             ...data
         };
         dispatch(signUp(newData));
+        navigate("/", { replace: true });
     };
 
     return (

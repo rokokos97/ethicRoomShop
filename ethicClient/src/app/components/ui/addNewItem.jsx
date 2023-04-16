@@ -12,6 +12,7 @@ import history from "../../utils/history";
 import { createItem } from "../../store/items";
 import axios from "axios";
 import configFile from "../../config.json";
+import { useNavigate } from "react-router-dom";
 
 const AddNewItem = () => {
   const categoriesIsLoading = useSelector(getCategoriesLoadingStatus());
@@ -29,6 +30,7 @@ const AddNewItem = () => {
   const [imageUrl, setImageUrl] = useState("");
   const [errors, setErrors] = useState({});
   const inputFileRef = React.useRef(null);
+  const navigate = useNavigate();
   const handleChange = (target) => {
     setData((prevState) => ({
       ...prevState,
@@ -92,6 +94,7 @@ const AddNewItem = () => {
       image: imageUrl
     };
     dispatch(createItem(newData));
+    navigate("/items");
   };
   return (
     <>
@@ -147,6 +150,7 @@ const AddNewItem = () => {
               }
               <button
                 className="btn btn-primary"
+                type="button"
                 onClick={() => { inputFileRef.current.click(); }}
               >Add image
               </button>

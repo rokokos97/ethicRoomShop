@@ -26,6 +26,7 @@ const itemsSlice = createSlice({
         itemCreateReceived: (state, action) => {
             state.isLoading = false;
             state.entities.push(action.payload);
+            alert("new item was created");
         },
         itemCreateRequestFiled: (state, action) => {
             state.error = action.payload;
@@ -57,8 +58,8 @@ export const loadItemsList = () => async (dispatch) => {
 export const createItem = (payload) => async (dispatch) => {
     dispatch(itemCreateRequested());
     try {
-        const data = await itemService.create(payload);
-        dispatch(itemCreateReceived(data));
+        const { content } = await itemService.create(payload);
+        await dispatch(itemCreateReceived(content));
     } catch (error) {
         dispatch(itemCreateRequestFiled(error.message));
     }

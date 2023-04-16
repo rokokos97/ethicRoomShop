@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import categoryService from "../services/category.service";
-import isOutdated from "../utils/isOutdated";
 
 const categoriesSlice = createSlice({
     name: "categories",
@@ -31,8 +30,6 @@ const { categoriesRequested, categoriesReceived, categoriesRequestFiled } =
     actions;
 
 export const loadCategoriesList = () => async (dispatch, getState) => {
-    const { lastFetch } = getState().categories;
-    if (isOutdated(lastFetch)) {
         dispatch(categoriesRequested());
         try {
             const { content } = await categoryService.get();
@@ -40,7 +37,6 @@ export const loadCategoriesList = () => async (dispatch, getState) => {
         } catch (error) {
             dispatch(categoriesRequestFiled(error.message));
         }
-    }
 };
 export const getCategories = () => (state) => state.categories.entities;
 export const getCategoriesLoadingStatus = () => (state) =>

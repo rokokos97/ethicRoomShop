@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { getItems, getItemsLoadingStatus } from "../../../store/items";
-import ItemCard from "../../ui/itemCard";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Pagination from "../../common/pagination";
 import { paginate } from "../../../utils/paginate";
 import {
@@ -12,6 +11,7 @@ import {
 import GroupList from "../../common/groupList";
 import _ from "lodash";
 import SearchLine from "../../ui/searchLine";
+import ItemCard from "../../ui/itemCard";
 
 const ItemsListPage = () => {
   const isItemsLoading = useSelector(getItemsLoadingStatus());
@@ -88,10 +88,10 @@ const ItemsListPage = () => {
                   key={index}
                   className="w-25 m-1 mb-5 p-2"
                 >
-                  <NavLink
+                  <Link
                     to={`/items/${item._id}`}
                     className="link-dark nav-link"
-                  ><ItemCard item={item}/></NavLink>
+                  ><ItemCard item={item}/></Link>
                 </li>
               ))
             }

@@ -12,7 +12,7 @@ const LoginForm = () => {
         stayOn: false
     });
     const loginError = useSelector(getAuthErrors());
-    const dispath = useDispatch();
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const [errors, setErrors] = useState({});
 
@@ -49,7 +49,7 @@ const LoginForm = () => {
         const isValid = validate();
         if (!isValid) return;
         const redirect = navigate("/");
-        dispath(login({ payload: data, redirect }));
+        dispatch(login({ payload: data, redirect }));
     };
     return (
       <>

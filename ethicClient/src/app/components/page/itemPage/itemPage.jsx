@@ -1,36 +1,42 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getItemById } from "../../../store/items";
-import { Image } from "react-bootstrap";
-import img from "../../../images/itemImage/blackTankTop2.jpeg";
-import history from "../../../utils/history";
 import { useParams } from "react-router-dom";
+import BackHistoryBlock from "../../common/backButton";
+import { addItemInCart } from "../../../store/cart";
 
 const ItemPage = () => {
-    const itemId = useParams();
-    const item = useSelector(getItemById(itemId));
-    if (item) {
+  const dispatch = useDispatch();
+  const { itemId } = useParams();
+  const item = useSelector(getItemById(itemId));
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(addItemInCart(item));
+  };
+  if (item) {
         return (
           <>
-            <div className="d-flex justify-content-between m-5">
-              <i className="bi bi-arrow-left" role="button" onClick={() => history.goBack()}>back to catalogue</i>
-              <i className="bi bi-x-lg" role="button" onClick={() => history.goBack()}/>
-            </div>
-            <div className="container d-flex">
-              <div className="w-50 d-flex justify-content-center">
-                <Image className="w-75" fluid src={img}/>
-              </div>
-              <div>
-                <h1>{item.name}</h1>
-                <h2>{`${item.price} UAH`}</h2>
-                <button>Buy now</button>
-                <h2>{item.description}</h2>
-                <h3>{item.composition}</h3>
+            <BackHistoryBlock/>
+            <div className="card mb-3 w-75 mx-auto">
+              <div className="row g-0">
+                <div className="col-md-6">
+                  <img src={`http://localhost:8080/api${item.image}`} className="img-fluid rounded-start" alt="item image"/>
+                </div>
+                <div className="col-md-4 mx-2">
+                  <div className="card-body">
+                    <h3 className="card-title m-3">{item.name}</h3>
+                    <p className="card-text m-3">{item.description}</p>
+                    <button
+                      type="submit"
+                      onClick={handleSubmit}
+                      className="btn btn-dark text-white m-3">  Buy Now  </button>
+                    <p className="card-text m-3"><small className="text-muted">{item.composition}</small></p>
+                  </div>
+                </div>
               </div>
             </div>
           </>
-
         );
     } else {
         return <h1>Loading...</h1>;
