@@ -1,4 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
+import {toast} from 'react-toastify';
 import itemService from '../services/item.service';
 
 const itemsSlice = createSlice({
@@ -26,7 +27,6 @@ const itemsSlice = createSlice({
     itemCreateReceived: (state, action) => {
       state.isLoading = false;
       state.entities.push(action.payload);
-      alert('new item was created');
     },
     itemCreateRequestFiled: (state, action) => {
       state.error = action.payload;
@@ -75,6 +75,9 @@ export const createItem = (payload) => async (dispatch) => {
   dispatch(itemCreateRequested());
   try {
     const {content} = await itemService.create(payload);
+    toast.dark('item has been created!', {
+      position: toast.POSITION.BOTTOM_RIGHT,
+    });
     await dispatch(itemCreateReceived(content));
   } catch (error) {
     dispatch(itemCreateRequestFiled(error.message));
@@ -84,6 +87,9 @@ export const deleteItem = (id) => async (dispatch) => {
   dispatch(itemDeleteRequested());
   try {
     await itemService.delete(id);
+    toast.dark('item has been deleted!', {
+      position: toast.POSITION.BOTTOM_RIGHT,
+    });
     dispatch(itemDeleteReceived(id));
   } catch (e) {
     dispatch(itemDeleteRequestFailed(e.message));

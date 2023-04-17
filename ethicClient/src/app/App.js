@@ -11,6 +11,8 @@ import LogOutLayout from './layouts/logOutLayout';
 import AddNewItem from './components/ui/addNewItem';
 import UserLayout from './layouts/userLayout';
 import ItemsLayout from './layouts/ItemsLayout';
+import UserLoader from './components/ui/hoc/userLoader';
+import AuthLoader from './components/ui/hoc/authLoader';
 function App() {
   return (
     <div>
@@ -18,12 +20,20 @@ function App() {
       <AppLoader>
         <Routes>
           <Route index element={<MainLayout/>} />
-          <Route path="/addItem" element={<AddNewItem/>}/>
+          <Route path="/addItem" element={
+            <UserLoader>
+              <AddNewItem/>
+            </UserLoader>
+          }/>
           <Route path="/info" element={<InfoLayout/>}/>
           <Route path="/about" element={<AboutLayout/>}/>
           <Route path="/logout" element={<LogOutLayout/>}/>
           <Route path="/items/*" element={<ItemsLayout/>}/>
-          <Route path="/login/*" element={<LoginLayout/>}/>
+          <Route path="/login/*" element={
+            <AuthLoader>
+              <LoginLayout/>
+            </AuthLoader>
+          }/>
           <Route path="/user/*" element={<UserLayout/>}/>
           <Route path="*" element={<Navigate to="/"/>}/>
         </Routes>

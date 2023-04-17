@@ -6,7 +6,7 @@
     "category":"6433317b36de620b0f4c5190",
     "description":"Dress with transformer chains",
     "composition":"polyester: 100%",
-    "image":"/upload/transform-dress.jpeg"
+    "image":"/upload/transform-dress.jpg"
   },
   {
     "_id":"643c738c76cfd1ee8082eece",
@@ -15,7 +15,7 @@
     "category":"6433317b36de620b0f4c5193",
     "description":"Long kimono with embroidery",
     "composition":"viscose: 50%  linen: 50%",
-    "image":"/upload/dark-kimono.jpeg"
+    "image":"/upload/dark-kimono.jpg"
     },
   {
     "_id": "643c7626f4073d76a4505f24",
@@ -24,7 +24,7 @@
     "category": "6433317b36de620b0f4c5194",
     "description": "T-shirt with fun embroidery",
     "composition": "Cotton: 98%  Elastane: 2%",
-    "image": "/upload/tshirts.jpeg"
+    "image": "/upload/tshirts.jpg"
   },
   {
     "_id":"643c77768a2b1deff704c770",
@@ -33,16 +33,7 @@
     "category":"6433317b36de620b0f4c5195",
     "description":"Warm clothes for cold winter",
     "composition":"cashmere: 100%",
-    "image":"/upload/bodys.jpeg"
-  },
-  {
-    "_id":"643c78cf88a9f7eaf279cbbe",
-    "name":"Undershirt “Kyiv metro”",
-    "price":980,
-    "category":"6433317b36de620b0f4c5197",
-    "description":"Undershirt with“Kyiv metro” logo",
-    "composition":"Сotton: 100%",
-    "image":"/upload/Shirt-metro.jpeg"
+    "image":"/upload/body.jpg"
   },
   {
     "_id":"643c7b3fecd0c6f15b0d84ba",
@@ -51,7 +42,7 @@
     "category":"6433317b36de620b0f4c5192",
     "description":"Make your mood with our tiger",
     "composition":"Cotton: 100%",
-    "image":"/upload/hoodies.jpeg"
+    "image":"/upload/hoodies.jpg"
     },
   {
     "_id":"643c7bca3ed44f48d91e10d7",
@@ -69,6 +60,66 @@
     "category":"6433317b36de620b0f4c5196",
     "description":"Warm and gentle coat",
     "composition":"imitative cashmere: 100%",
-    "image":"/upload/outerwear.jpeg"
-  }
+    "image":"/upload/outerwear.jpg"
+  },
+  {
+    "_id":"643d2cc50a3b8c64fb402da5",
+    "name":"Berlin dress 2.0",
+    "price":2200,
+    "category":"6433317b36de620b0f4c5190",
+    "description":"The dress is suitable for long parties in Berghain",
+    "composition":"Linen: 50%  Сotton: 50%",
+    "image":"/upload/dress2.jpg"
+    },
+  {
+    "_id":"643d2df5459b21509d7480c7",
+    "name":"Kimono costume",
+    "price":3200,
+    "category":"6433317b36de620b0f4c5193",
+    "description":"Brizzy kimono with embroidery",
+    "composition":"Viscose: 50%  Linen: 50%",
+    "image":"/upload/kimonos.jpg"
+  },
+  {
+    "_id":"643d2e6b66a8d4ee01e52c01",
+    "name":"“Smiley” linen t-shirt",
+    "price":750,"category":"6433317b36de620b0f4c5194",
+    "description":"Smile like a symbol of strength",
+    "composition":"Cotton: 95%  Elastane: 5%",
+    "image":"/upload/shirt-white.jpg"
+  },
+  {
+    "_id":"643d2f4166a8d4ee01e52c04",
+    "name":"Glory to Ukraine Blue",
+    "price":1200,"category":"6433317b36de620b0f4c5197",
+    "description":"In glory, we trust!!!",
+    "composition":"Mesh: 100%",
+    "image":"/upload/tops.jpg"
+  },
+  {
+    "_id":"643d2fb1d549915e24f9572e",
+    "name":"Undershirt “Kyiv metro”",
+    "price":650,
+    "category":"6433317b36de620b0f4c5197",
+    "description":"Basic undershirt with Kyiv subway logo",
+    "composition":"Cotton: 100%",
+    "image":"/upload/shirt-metro.jpg"},
+  {
+    "_id":"643d3237bd7cd2ed6148d985",
+    "name":"Oversize pants",
+    "price":2400,
+    "category":"6433317b36de620b0f4c5191",
+    "description":"Wide legged pants with carabiner for keys",
+    "composition":"Cotton: 100%",
+    "image":"/upload/oversize-pants.jpg"
+  },
+  {
+    "_id":"643d31efbd7cd2ed6148d982",
+    "name":"Cargo dirty reflective",
+    "price":2800,
+    "category":"6433317b36de620b0f4c5191",
+    "description":"Made with worker-wear fabric",
+    "composition":"Viscose: 50%  Linen: 50%",
+    "image":"/upload/cargo-pants.jpg"}
+
 ]

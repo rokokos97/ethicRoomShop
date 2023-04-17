@@ -11,7 +11,7 @@ const LoginLayout = () => {
           <Routes>
             <Route index element={<LoginForm />}/>
             <Route path="signUp" element={<RegisterForm/>}/>
-            <Route path="*" element={<Navigate to="/login"/>}/>
+            <Route path="*" element={<Navigate to="/login/"/>}/>
           </Routes>
         </div>
       </div>

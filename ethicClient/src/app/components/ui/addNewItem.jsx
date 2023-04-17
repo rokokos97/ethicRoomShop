@@ -8,11 +8,12 @@ import {
   getCategories,
   getCategoriesLoadingStatus,
 } from '../../store/categories';
-import history from '../../utils/history';
 import {createItem} from '../../store/items';
 import axios from 'axios';
 import configFile from '../../config.json';
 import {useNavigate} from 'react-router-dom';
+import BackHistoryBlock from '../common/backHistoryBlock';
+import {toast} from 'react-toastify';
 
 const AddNewItem = () => {
   const categoriesIsLoading = useSelector(getCategoriesLoadingStatus());
@@ -79,10 +80,13 @@ const AddNewItem = () => {
       formData.append('image', imageFile);
       const {data} = await axios
           .post(configFile.apiEndpoint + '/upload/', formData);
+      toast.dark('Image uploaded!', {
+        position: toast.POSITION.BOTTOM_RIGHT,
+      });
       const imageUrl = data.url;
       setImageUrl(imageUrl);
     } catch (e) {
-      console.log(e.message);
+      toast.error(e.message);
     }
   };
   const handleSubmit = (e) => {
@@ -98,16 +102,7 @@ const AddNewItem = () => {
   };
   return (
     <>
-      <div className="d-flex justify-content-between m-5">
-        <i
-          className="bi bi-arrow-left"
-          role="button"
-          onClick={() => history.goBack()}>back to catalogue</i>
-        <i
-          className="bi bi-x-lg"
-          role="button"
-          onClick={() => history.goBack()}/>
-      </div>
+      <BackHistoryBlock/>
       <div className=" container mt-5">
         <div className="row">
           <div className="card col-md-6 offset-md-3 shadow p-4">

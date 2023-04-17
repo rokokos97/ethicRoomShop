@@ -1,4 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
+import {toast} from 'react-toastify';
 
 const cartSlice = createSlice({
   name: 'cart',
@@ -8,7 +9,6 @@ const cartSlice = createSlice({
   },
   reducers: {
     addedItem(state, action) {
-      console.log('action.payload', action.payload);
       state.entities.push(action.payload);
     },
     removeOneItem(state, action) {
@@ -17,17 +17,16 @@ const cartSlice = createSlice({
         state.entities.splice(index, 1);
       }
     },
-    deletedItem(state, action) {
-      state.entities = state.entities.filter((el) => el._id !== action.payload);
+    deletedItems(state) {
+      state.entities = [];
     },
   },
 });
 
 const {reducer: cartReducer, actions} = cartSlice;
-const {addedItem, deletedItem, removeOneItem} = actions;
+const {addedItem, deletedItems, removeOneItem} = actions;
 
 export const addItemInCart = (item) => (dispatch) => {
-  console.log(item);
   dispatch(addedItem(item));
 };
 
@@ -35,8 +34,11 @@ export const removeOneItemFromCart = (itemId) => (dispatch) => {
   dispatch(removeOneItem(itemId));
 };
 
-export const deleteItemFromCart = (id) => (dispatch) => {
-  dispatch(deletedItem(id));
+export const deleteItemsFromCart = () => (dispatch) => {
+  dispatch(deletedItems());
+  toast.dark('Your order has been placed', {
+    position: toast.POSITION.BOTTOM_RIGHT,
+  });
 };
 
 export const getCart = () => (state) => state.cart.entities;

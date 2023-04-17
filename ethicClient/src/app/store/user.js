@@ -2,8 +2,9 @@ import {createAction, createSlice} from '@reduxjs/toolkit';
 import authService from '../services/auth.service';
 import localStorageService from '../services/localStorage.service';
 import userService from '../services/user.service';
-import {generetaAuthError} from '../utils/generateAuthError';
+import {generateAuthError} from '../utils/generateAuthError';
 import history from '../utils/history';
+import {toast} from 'react-toastify';
 const initialState = localStorageService.getAccessToken() ?
     {
       entities: null,
@@ -28,6 +29,7 @@ const usersSlice = createSlice({
       state.entities = action.payload;
       state.auth = action.payload._id;
       state.isLoggedIn = true;
+      state.error = null;
     },
     authRequestFailed: (state, action) => {
       state.error = action.payload;
@@ -87,14 +89,22 @@ export const login = ({payload, redirect}) => async (dispatch) => {
     const data = await authService.login({email, password});
     localStorageService.setTokens(data);
     dispatch(authRequestSuccess(data.user));
+    toast.dark('You are logged in', {
+      position: toast.POSITION.BOTTOM_RIGHT,
+    });
     history.push(redirect);
   } catch (error) {
     const {code, message} = error.response.data.errors;
     if (code === 400) {
-      const errorMessage = generetaAuthError(message);
+      const errorMessage = generateAuthError(message);
+      toast.dark(errorMessage, {
+        position: toast.POSITION.BOTTOM_RIGHT,
+      });
       dispatch(authRequestFailed(errorMessage));
     } else {
-      dispatch(authRequestFailed(error.message));
+      toast.dark(error, {
+        position: toast.POSITION.BOTTOM_RIGHT,
+      });
     }
   }
 };

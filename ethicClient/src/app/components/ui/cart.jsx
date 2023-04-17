@@ -1,13 +1,15 @@
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {
-  addItemInCart,
+  addItemInCart, deleteItemsFromCart,
   getCart,
   removeOneItemFromCart,
 } from '../../store/cart';
 import BackHistoryBlock from '../common/backHistoryBlock';
+import {useNavigate} from 'react-router-dom';
 
 const Cart = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const cart = useSelector(getCart());
   const handleAdd = (item) => {
@@ -16,12 +18,14 @@ const Cart = () => {
   const handleRemoveOneItem = (itemId) => {
     dispatch(removeOneItemFromCart(itemId));
   };
+  const handleCheckout = () => {
+    dispatch(deleteItemsFromCart());
+    navigate('/items');
+  };
   const totalIncrease = (cart) => {
     const newArray = [];
-
     for (const good of cart) {
       const found = newArray.find((item) => item._id === good._id);
-
       if (found) {
         found.count++;
         found.totalPrice += found.price;
@@ -100,6 +104,7 @@ const Cart = () => {
                     <div className="card-body">
                       <button
                         className="btn btn-light container-fluid"
+                        onClick={handleCheckout}
                       >
                         Checkout
                       </button>

@@ -5,11 +5,10 @@ import {useDispatch, useSelector} from 'react-redux';
 import {getAuthErrors, login} from '../../store/user';
 import * as yup from 'yup';
 
+
 const LoginForm = () => {
-  const [data, setData] = useState({
-    email: '',
-    password: '',
-  });
+  const initialState = {email: '', password: ''};
+  const [data, setData] = useState(initialState);
   const loginError = useSelector(getAuthErrors());
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -27,9 +26,6 @@ const LoginForm = () => {
         .required('Email is required')
         .email('Email is not correct'),
   });
-  useEffect(() => {
-    validate();
-  }, [data]);
   const validate = () => {
     validateSchema
         .validate(data)
@@ -47,9 +43,12 @@ const LoginForm = () => {
     e.preventDefault();
     const isValid = validate();
     if (!isValid) return;
-    const redirect = navigate('/');
+    const redirect = navigate('/login');
     dispatch(login({payload: data, redirect}));
   };
+  useEffect(() => {
+    validate();
+  }, [data]);
   return (
     <>
       <h3 className="mb-4">Login</h3>

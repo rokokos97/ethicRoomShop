@@ -15,10 +15,12 @@ const ItemPage = () => {
   const item = useSelector(getItemById(itemId));
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addItemInCart(item));
+    !isLoggedIn?
+      navigate('/login'):
+      dispatch(addItemInCart(item));
   };
   const handleDelete = () => {
-    const deleted = confirm('item has been deleted!');
+    const deleted = confirm('Are you really want delete item?');
     if (deleted) {
       dispatch(deleteItem(itemId));
       navigate('/items', {replace: true});
@@ -50,14 +52,14 @@ const ItemPage = () => {
             </div>
             {
               isLoggedIn &&
-                  <div className="col-md-auto text-end">
-                    <button
-                      type="button"
-                      className="btn-close mt-4"
-                      onClick={handleDelete}
-                      aria-label="Close">
-                    </button>
-                  </div>
+                <div className="col-md-auto text-end">
+                  <button
+                    type="button"
+                    className="btn-close mt-4"
+                    onClick={handleDelete}
+                    aria-label="Close">
+                  </button>
+                </div>
             }
           </div>
         </div>
@@ -74,9 +76,7 @@ const ItemPage = () => {
     );
   }
 };
-
 ItemPage.propTypes = {
   itemId: PropTypes.string,
 };
-
 export default ItemPage;

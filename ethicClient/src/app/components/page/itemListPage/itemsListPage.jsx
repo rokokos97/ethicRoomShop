@@ -16,7 +16,7 @@ import ItemCard from '../../ui/itemCard';
 const ItemsListPage = () => {
   const isItemsLoading = useSelector(getItemsLoadingStatus());
   const items = useSelector(getItems());
-  const pageSize = 9;
+  const pageSize = 3;
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
   const [initialSort, setInitialSort] = useState('asc');
