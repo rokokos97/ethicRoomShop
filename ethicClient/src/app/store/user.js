@@ -6,20 +6,20 @@ import {generateAuthError} from '../utils/generateAuthError';
 import history from '../utils/history';
 import {toast} from 'react-toastify';
 const initialState = localStorageService.getAccessToken() ?
-    {
-      entities: null,
-      isLoading: true,
-      error: null,
-      auth: {userId: localStorageService.getUserId()},
-      isLoggedIn: true,
-    } :
-    {
-      entities: null,
-      isLoading: false,
-      error: null,
-      auth: null,
-      isLoggedIn: false,
-    };
+  {
+    entities: null,
+    isLoading: true,
+    error: null,
+    auth: {userId: localStorageService.getUserId()},
+    isLoggedIn: true,
+  }:
+  {
+    entities: null,
+    isLoading: false,
+    error: null,
+    auth: null,
+    isLoggedIn: false,
+  };
 
 const usersSlice = createSlice({
   name: 'user',
@@ -91,15 +91,13 @@ export const login = ({payload, redirect}) => async (dispatch) => {
     dispatch(authRequestSuccess(data.user));
     toast.dark('You are logged in', {
       position: toast.POSITION.BOTTOM_RIGHT,
+      hideProgressBar: true,
     });
     history.push(redirect);
   } catch (error) {
     const {code, message} = error.response.data.errors;
     if (code === 400) {
       const errorMessage = generateAuthError(message);
-      toast.dark(errorMessage, {
-        position: toast.POSITION.BOTTOM_RIGHT,
-      });
       dispatch(authRequestFailed(errorMessage));
     } else {
       toast.dark(error, {
@@ -118,6 +116,10 @@ export const updateUser = (payload) => async (dispatch) => {
   try {
     const {content} = await userService.update(payload);
     dispatch(userUpdateSuccess(content));
+    toast.dark('User info updated', {
+      hideProgressBar: true,
+      position: toast.POSITION.BOTTOM_RIGHT,
+    });
     history.push(`/user`);
   } catch (error) {
     dispatch(userUpdateFailed(error.message));

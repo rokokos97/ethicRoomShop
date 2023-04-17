@@ -28,6 +28,10 @@ const {addedItem, deletedItems, removeOneItem} = actions;
 
 export const addItemInCart = (item) => (dispatch) => {
   dispatch(addedItem(item));
+  toast.dark('Item add to cart', {
+    hideProgressBar: true,
+    position: toast.POSITION.BOTTOM_RIGHT,
+  });
 };
 
 export const removeOneItemFromCart = (itemId) => (dispatch) => {
@@ -37,6 +41,7 @@ export const removeOneItemFromCart = (itemId) => (dispatch) => {
 export const deleteItemsFromCart = () => (dispatch) => {
   dispatch(deletedItems());
   toast.dark('Your order has been placed', {
+    hideProgressBar: true,
     position: toast.POSITION.BOTTOM_RIGHT,
   });
 };
