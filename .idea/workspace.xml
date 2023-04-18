@@ -4,7 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8224ba35-5a53-409a-9544-cc0714ffa415" name="Changes" comment="add server gitignore" />
+    <list default="true" id="8224ba35-5a53-409a-9544-cc0714ffa415" name="Changes" comment="install svgo">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicClient/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/ethicClient/.dockerignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicClient/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ethicClient/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicServer/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/ethicServer/.dockerignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicServer/client/android-chrome-144x144.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicServer/client/apple-touch-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicServer/client/asset-manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicServer/client/browserconfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicServer/client/favicon-16x16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicServer/client/favicon-32x32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicServer/client/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicServer/client/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicServer/client/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicServer/client/mstile-150x150.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicServer/client/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicServer/client/safari-pinned-tab.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicServer/client/site.webmanifest" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicServer/client/static/css/main.ec81ea1f.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicServer/client/static/css/main.ec81ea1f.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicServer/client/static/js/787.e4e4d79b.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicServer/client/static/js/787.e4e4d79b.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicServer/client/static/js/main.623ceea9.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicServer/client/static/js/main.623ceea9.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicServer/client/static/js/main.623ceea9.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicServer/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ethicServer/package.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,24 +106,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/rokokos97/WebstormProjects/ethic-room/ethicServer/client",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "sshConsole",
-    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/rokokos97/WebstormProjects/ethic-room/ethicServer/client&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;sshConsole&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/ethicServer/client" />
@@ -160,6 +186,9 @@
       <workItem from="1681727286040" duration="23000" />
       <workItem from="1681727372499" duration="1519000" />
       <workItem from="1681730417549" duration="19556000" />
+      <workItem from="1681757376057" duration="3742000" />
+      <workItem from="1681800967364" duration="2094000" />
+      <workItem from="1681803304749" duration="106000" />
     </task>
     <task id="LOCAL-00001" summary="initial project">
       <created>1678734136173</created>
@@ -469,7 +498,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681756978099</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="install svgo">
+      <created>1681757398574</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1681757398574</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -488,7 +524,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="itemsListPage.jsx =&gt; add block with spinner (11-15)" />
     <MESSAGE value="load categories" />
     <MESSAGE value="load items" />
     <MESSAGE value="add newItemForm" />
@@ -513,7 +548,8 @@
     <MESSAGE value="delete all files" />
     <MESSAGE value="merge all files to master" />
     <MESSAGE value="add server gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="add server gitignore" />
+    <MESSAGE value="install svgo" />
+    <option name="LAST_COMMIT_MESSAGE" value="install svgo" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="regexState">
