@@ -1,12 +1,13 @@
 import React from 'react';
 import {Image} from 'react-bootstrap';
 import Footer from '../components/ui/footer';
+import config from '../config.json';
 
 const AboutLayout = () => {
   return (
     <>
       <Image
-        src={`http://localhost:8080/api/upload/aboutUs01.png`}
+        src={`${config.apiEndpoint}/upload/aboutUs01.png`}
         alt="hot girl on the table"
         fluid
       />

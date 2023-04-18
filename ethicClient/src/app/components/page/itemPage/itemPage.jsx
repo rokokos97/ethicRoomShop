@@ -6,6 +6,7 @@ import {useNavigate, useParams} from 'react-router-dom';
 import BackHistoryBlock from '../../common/backHistoryBlock';
 import {addItemInCart} from '../../../store/cart';
 import {getIsLoggedIn} from '../../../store/user';
+import config from '../../../config.json';
 
 const ItemPage = () => {
   const dispatch = useDispatch();
@@ -33,7 +34,10 @@ const ItemPage = () => {
         <div className="card mb-3 w-75 mx-auto">
           <div className="row g-0">
             <div className="col-md-6">
-              <img src={`http://localhost:8080/api${item.image}`} className="img-fluid rounded-start" alt="item image"/>
+              <img
+                src={`${config.apiEndpoint}${item.image}`}
+                className="img-fluid rounded-start"
+                alt="item image"/>
             </div>
             <div className="col-md-5 mx-2">
               <div className="card-body">

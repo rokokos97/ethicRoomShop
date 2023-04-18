@@ -1,5 +1,6 @@
 import React from 'react';
 import {Carousel, CarouselItem} from 'react-bootstrap';
+import config from '../../config.json';
 
 const CarouselBox = () => {
   return (
@@ -10,28 +11,28 @@ const CarouselBox = () => {
       >
         <CarouselItem>
           <img
-            src={`http://localhost:8080/api/upload/main1.png`}
+            src={`${config.apiEndpoint}/upload/main1.png`}
             className="d-block w-100"
             alt="girl on the table"
           />
         </CarouselItem>
         <CarouselItem>
           <img
-            src={`http://localhost:8080/api/upload/main2.png`}
+            src={`${config.apiEndpoint}/upload/main2.png`}
             className="d-block w-100"
             alt="girls"
           />
         </CarouselItem>
         <CarouselItem>
           <img
-            src={`http://localhost:8080/api/upload/main3.png`}
+            src={`${config.apiEndpoint}/upload/main3.png`}
             className="d-block w-100"
             alt="girl on stairs"
           />
         </CarouselItem>
         <CarouselItem>
           <img
-            src={`http://localhost:8080/api/upload/main4.png`}
+            src={`${config.apiEndpoint}/upload/main4.png`}
             className="d-block w-100"
             alt="girls"
           />

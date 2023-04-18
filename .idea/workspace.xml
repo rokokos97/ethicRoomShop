@@ -4,32 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8224ba35-5a53-409a-9544-cc0714ffa415" name="Changes" comment="install svgo">
+    <list default="true" id="8224ba35-5a53-409a-9544-cc0714ffa415" name="Changes" comment=".dockerignore update">
+      <change afterPath="$PROJECT_DIR$/ethicServer/config/production.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethicClient/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/ethicClient/.dockerignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethicClient/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ethicClient/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethicServer/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/ethicServer/.dockerignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethicServer/client/android-chrome-144x144.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethicServer/client/apple-touch-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethicServer/client/asset-manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethicServer/client/browserconfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethicServer/client/favicon-16x16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethicServer/client/favicon-32x32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethicServer/client/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethicServer/client/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethicServer/client/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethicServer/client/mstile-150x150.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethicServer/client/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethicServer/client/safari-pinned-tab.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethicServer/client/site.webmanifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethicServer/client/static/css/main.ec81ea1f.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethicServer/client/static/css/main.ec81ea1f.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethicServer/client/static/js/787.e4e4d79b.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethicServer/client/static/js/787.e4e4d79b.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethicServer/client/static/js/main.623ceea9.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethicServer/client/static/js/main.623ceea9.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethicServer/client/static/js/main.623ceea9.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethicServer/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ethicServer/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicClient/src/app/components/page/itemPage/itemPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/ethicClient/src/app/components/page/itemPage/itemPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicClient/src/app/components/ui/carouselBox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/ethicClient/src/app/components/ui/carouselBox.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicClient/src/app/components/ui/cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/ethicClient/src/app/components/ui/cart.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicClient/src/app/components/ui/itemCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/ethicClient/src/app/components/ui/itemCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicClient/src/app/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/ethicClient/src/app/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicClient/src/app/layouts/aboutLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/ethicClient/src/app/layouts/aboutLayout.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +171,9 @@
       <workItem from="1681730417549" duration="19556000" />
       <workItem from="1681757376057" duration="3742000" />
       <workItem from="1681800967364" duration="2094000" />
-      <workItem from="1681803304749" duration="106000" />
+      <workItem from="1681803304749" duration="1968000" />
+      <workItem from="1681807021499" duration="2399000" />
+      <workItem from="1681809915011" duration="4701000" />
     </task>
     <task id="LOCAL-00001" summary="initial project">
       <created>1678734136173</created>
@@ -505,7 +490,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681757398574</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary=".dockerignore update">
+      <created>1681803457618</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1681803457618</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -524,7 +516,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="load categories" />
     <MESSAGE value="load items" />
     <MESSAGE value="add newItemForm" />
     <MESSAGE value="add items table" />
@@ -549,7 +540,8 @@
     <MESSAGE value="merge all files to master" />
     <MESSAGE value="add server gitignore" />
     <MESSAGE value="install svgo" />
-    <option name="LAST_COMMIT_MESSAGE" value="install svgo" />
+    <MESSAGE value=".dockerignore update" />
+    <option name="LAST_COMMIT_MESSAGE" value=".dockerignore update" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="regexState">

@@ -7,6 +7,7 @@ import {
 } from '../../store/cart';
 import BackHistoryBlock from '../common/backHistoryBlock';
 import {useNavigate} from 'react-router-dom';
+import config from '../../config.json';
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -46,7 +47,10 @@ const Cart = () => {
       {
         newCart.length > 0 ?
           <div className="card mb-3">
-            <img src={`http://localhost:8080/api/upload/aboutUs01.png`} className="card-img-top" alt="..."/>
+            <img
+              src={`${config.apiEndpoint}/upload/aboutUs01.png`}
+              className="card-img-top"
+              alt="..."/>
             <div className="card-body">
               <h5 className="card-title text-sm-center">YOUR CART</h5>
               {newCart.map((item, index) => (
