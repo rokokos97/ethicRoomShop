@@ -1,4 +1,4 @@
-# `about app`
+# `About App`
 
 This is single-page application education project. In this project I realised all of my developers skills.
 ## Technologies and frameworks:
@@ -9,22 +9,22 @@ This is single-page application education project. In this project I realised al
     # Bootstrap
     # Axios
     # Lodash
-    # nanoid
-    # yup
+    # Nanoid
+    # Yup
 
 ### Back-End part: 
     # Node.js
     # Express
     # MongoDB
-    # bcrypt
-    # express-validator
-    # jsonwebtoken
-    # mongoose
-    # path
+    # Bcrypt
+    # Express-validator
+    # Jsonwebtoken
+    # Mongoose
+    # Path
 
 ### Deployment
 
-This section has moved here: [http://31.184.254.193/](https://ethic-room.com)
+This section has moved here: [https://ethic-room.com](http://31.184.254.193/)
 
 # Getting Started with Create React App
 
