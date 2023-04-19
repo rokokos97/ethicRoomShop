@@ -1,6 +1,6 @@
 {
     "name": "ethic-room",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "private": true,
     "dependencies": {
         "@reduxjs/toolkit": "^1.7.1",
@@ -61,7 +61,6 @@
         "eslint-plugin-node": "^11.1.0",
         "eslint-plugin-promise": "^5.1.0",
         "eslint-plugin-react": "^7.32.2",
-        "eslint-plugin-react-hooks": "^4.2.0",
-        "svgo": "^3.0.2"
+        "eslint-plugin-react-hooks": "^4.2.0"
     }
 }
