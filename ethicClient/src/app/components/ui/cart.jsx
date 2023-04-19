@@ -60,7 +60,10 @@ const Cart = () => {
                 >
                   <div className="d-flex align-items-center row g-0">
                     <div className="col-md-1">
-                      <img src={`http://localhost:8080/api${item.image}`} className="img-fluid rounded-start" alt="item mini image"/>
+                      <img
+                        src={`${config.apiEndpoint}${item.image}`}
+                        className="img-fluid rounded-start"
+                        alt="item mini image"/>
                     </div>
                     <div className="col-md-7">
                       <div className="card-body">

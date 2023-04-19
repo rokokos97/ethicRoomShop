@@ -25,7 +25,7 @@ This is single-page application education project. In this project I realised al
 ### Deployment:
     # Docker
 
-This section has moved here: [https://ethic-room.com](http://31.184.254.193/)
+This section has moved here: [https://ethic-room.net](http://31.184.254.193/)
 
 
 # Getting Started with Create React App

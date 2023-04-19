@@ -1,6 +1,6 @@
 import React from 'react';
 import {Image} from 'react-bootstrap';
-import Footer from '../components/common/footer';
+import Footer from '../components/ui/footer';
 import config from '../config.json';
 
 const About = () => {
