@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8224ba35-5a53-409a-9544-cc0714ffa415" name="Changes" comment=".dockerignore update">
-      <change afterPath="$PROJECT_DIR$/ethicServer/config/production.json" afterDir="false" />
+    <list default="true" id="8224ba35-5a53-409a-9544-cc0714ffa415" name="Changes" comment="add production.json">
+      <change afterPath="$PROJECT_DIR$/ethicClient/src/app/components/ui/loader.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethicClient/src/app/components/page/itemPage/itemPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/ethicClient/src/app/components/page/itemPage/itemPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethicClient/src/app/components/ui/carouselBox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/ethicClient/src/app/components/ui/carouselBox.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethicClient/src/app/components/ui/cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/ethicClient/src/app/components/ui/cart.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethicClient/src/app/components/ui/itemCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/ethicClient/src/app/components/ui/itemCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethicClient/src/app/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/ethicClient/src/app/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethicClient/src/app/layouts/aboutLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/ethicClient/src/app/layouts/aboutLayout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicClient/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ethicClient/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicClient/src/app/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/ethicClient/src/app/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicClient/src/app/components/common/groupList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/ethicClient/src/app/components/ui/groupList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicClient/src/app/components/page/itemListPage/itemsListPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/ethicClient/src/app/components/page/itemListPage/itemsListPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicClient/src/app/layouts/aboutLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/ethicClient/src/app/layouts/about.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicClient/src/app/layouts/infoLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/ethicClient/src/app/layouts/info.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicClient/src/app/layouts/logOutLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/ethicClient/src/app/layouts/logOut.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicClient/src/app/layouts/mainLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/ethicClient/src/app/layouts/main.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,10 +118,10 @@
       <recent name="$PROJECT_DIR$/ethicClient/src/app/components/common/form" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ethicClient/src/app/components/ui" />
       <recent name="$PROJECT_DIR$/ethicClient/src" />
       <recent name="$PROJECT_DIR$/ethicServer/mock" />
       <recent name="$PROJECT_DIR$/ethicServer" />
-      <recent name="$PROJECT_DIR$/ethicClient/src/app/components/ui" />
       <recent name="$PROJECT_DIR$/ethicClient/public" />
     </key>
   </component>

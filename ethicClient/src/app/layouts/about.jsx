@@ -3,7 +3,7 @@ import {Image} from 'react-bootstrap';
 import Footer from '../components/ui/footer';
 import config from '../config.json';
 
-const AboutLayout = () => {
+const About = () => {
   return (
     <>
       <Image
@@ -54,4 +54,4 @@ const AboutLayout = () => {
   );
 };
 
-export default AboutLayout;
+export default About;

@@ -1,13 +1,13 @@
 import React, {useEffect} from 'react';
 import {useDispatch} from 'react-redux';
 import {logOut} from '../store/user';
-import MainLayout from './mainLayout';
+import Main from './main';
 
-const LogOutLayout = () => {
+const LogOut = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(logOut());
   }, []);
-  return <MainLayout/>;
+  return <Main/>;
 };
-export default LogOutLayout;
+export default LogOut;

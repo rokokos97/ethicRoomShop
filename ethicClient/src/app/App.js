@@ -2,12 +2,12 @@ import React from 'react';
 import {Navigate, Route, Routes} from 'react-router-dom';
 import {ToastContainer} from 'react-toastify';
 import LoginLayout from './layouts/loginLayout';
-import MainLayout from './layouts/mainLayout';
-import InfoLayout from './layouts/infoLayout';
+import Main from './layouts/main';
+import Info from './layouts/info';
 import NavBar from './components/ui/navBar';
-import AboutLayout from './layouts/aboutLayout';
+import About from './layouts/about';
 import AppLoader from './components/ui/hoc/appLoader';
-import LogOutLayout from './layouts/logOutLayout';
+import LogOut from './layouts/logOut';
 import AddNewItem from './components/ui/addNewItem';
 import UserLayout from './layouts/userLayout';
 import ItemsLayout from './layouts/ItemsLayout';
@@ -19,15 +19,15 @@ function App() {
       <NavBar/>
       <AppLoader>
         <Routes>
-          <Route index element={<MainLayout/>} />
+          <Route index element={<Main/>} />
           <Route path="/addItem" element={
             <UserLoader>
               <AddNewItem/>
             </UserLoader>
           }/>
-          <Route path="/info" element={<InfoLayout/>}/>
-          <Route path="/about" element={<AboutLayout/>}/>
-          <Route path="/logout" element={<LogOutLayout/>}/>
+          <Route path="/info" element={<Info/>}/>
+          <Route path="/about" element={<About/>}/>
+          <Route path="/logout" element={<LogOut/>}/>
           <Route path="/items/*" element={<ItemsLayout/>}/>
           <Route path="/login/*" element={
             <AuthLoader>

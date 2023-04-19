@@ -2,7 +2,7 @@ import React from 'react';
 import AccordionBox from '../components/ui/accordionBox';
 import Footer from '../components/ui/footer';
 
-const InfoLayout = () => {
+const Info = () => {
   return (
     <>
       <div className="text-center w-75 mx-auto">
@@ -29,4 +29,4 @@ const InfoLayout = () => {
   );
 };
 
-export default InfoLayout;
+export default Info;

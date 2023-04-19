@@ -8,10 +8,11 @@ import {
   getCategories,
   getCategoriesLoadingStatus,
 } from '../../../store/categories';
-import GroupList from '../../common/groupList';
+import GroupList from '../../ui/groupList';
 import _ from 'lodash';
 import SearchLine from '../../ui/searchLine';
 import ItemCard from '../../ui/itemCard';
+import Loader from '../../ui/loader';
 
 const ItemsListPage = () => {
   const isItemsLoading = useSelector(getItemsLoadingStatus());
@@ -64,7 +65,7 @@ const ItemsListPage = () => {
   const itemsCrop = paginate(sortedItems, currentPage, pageSize);
   return (
     <>
-      { !isItemsLoading && !isCategoryLoading &&
+      { (!isItemsLoading && !isCategoryLoading) ?
           <div className="mx-auto m-3 m-75">
             <SearchLine
               onChange={handleSearchQuery}
@@ -106,6 +107,9 @@ const ItemsListPage = () => {
                 itemsCount={sortedItems.length}
               />
             </div>
+          </div> :
+          <div className="m-5">
+            <Loader/>
           </div>
       }
     </>
