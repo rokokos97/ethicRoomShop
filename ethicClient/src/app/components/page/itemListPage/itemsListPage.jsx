@@ -8,11 +8,11 @@ import {
   getCategories,
   getCategoriesLoadingStatus,
 } from '../../../store/categories';
-import GroupList from '../../ui/groupList';
+import GroupList from '../../common/groupList';
 import _ from 'lodash';
-import SearchLine from '../../ui/searchLine';
+import SearchLine from '../../common/searchLine';
 import ItemCard from '../../ui/itemCard';
-import Loader from '../../ui/loader';
+import Loader from '../../common/loader';
 
 const ItemsListPage = () => {
   const isItemsLoading = useSelector(getItemsLoadingStatus());

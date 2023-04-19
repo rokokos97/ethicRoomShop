@@ -1,6 +1,6 @@
 import React from 'react';
 import CarouselBox from '../components/ui/carouselBox';
-import Footer from '../components/ui/footer';
+import Footer from '../components/common/footer';
 import ItemsListPage from '../components/page/itemListPage';
 
 const Main = () => {
