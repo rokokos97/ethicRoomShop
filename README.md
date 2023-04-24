@@ -1,31 +1,40 @@
 # `About App`
 
-This is single-page application education project. In this project I realised all of my developers skills.
+This is my education project. In this Fullstack application (ReactJS + NodeJS) realise next part:
+### Filtration/Searching/Sorting items list
+### Registration and authorization users on Front-End and Back-End
+### Validation form
+### Creating, editing, deleting items and storage it on server
+### Secure routing for admin page
+
 ## Technologies and frameworks:
-### Front-End part: 
-    # JavaScript 
-    # React
-    # Redux
-    # Bootstrap
-    # Axios
-    # Lodash
-    # Nanoid
-    # Yup
+    ### JavaScript
+    ### NodeJS
+    ### ReactJS
+    ### Docker
 
-### Back-End part: 
-    # Node.js
-    # Express
-    # MongoDB
-    # Bcrypt
-    # Express-validator
-    # Jsonwebtoken
-    # Mongoose
-    # Path
+## Libraries:
+    ### Axios
+    ### Bootstrap
+    ### Bcrypt
+    ### Chalk
+    ### Config
+    ### Cors
+    ### Eslint
+    ### Express
+    ### Express-validator
+    ### Jsonwebtoken
+    ### Lodash
+    ### Mongoose
+    ### Nanoid
+    ### Path
+    ### React-Router@6
+    ### React-Rostify
+    ### Redux
+    ### Yup
 
-### Deployment:
-    # Docker
 
-This section has moved here: [https://ethic-room.net](http://31.184.254.193/)
+This section has moved here: [http://ethic-room.shop](http://ethic-room.shop/)
 
 
 # Getting Started with Create React App
