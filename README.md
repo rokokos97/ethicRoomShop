@@ -1,10 +1,10 @@
 # `About App`
 
-## This is my education project. In this Fullstack application (ReactJS + NodeJS) realise next part:
+## This is my education project [http://ethic-room.shop](http://ethic-room.shop/). It is Full-stack project (ReactJs + NodeJs). In this application implemented, next parts :
     * Filtration/Searching/Sorting items list
-    * Registration and authorization users on Front-End and Back-End
+    * Registration and authorization of users on Front-End and Back-End
     * Validation form
-    * Creating, editing, deleting items and storage it on server
+    * Creating, editing and deleting items and storage it on server
     * Secure routing for admin page
 
 ## Technologies and frameworks:
@@ -32,10 +32,6 @@
     * React-Rostify
     * Redux
     * Yup
-
-
-This section has moved here: [http://ethic-room.shop](http://ethic-room.shop/)
-
 
 # Getting Started with Create React App
 
