@@ -17,7 +17,7 @@ import Loader from '../../common/loader';
 const ItemsListPage = () => {
   const isItemsLoading = useSelector(getItemsLoadingStatus());
   const items = useSelector(getItems());
-  const pageSize = 3;
+  const pageSize = 100;
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
   const [initialSort, setInitialSort] = useState('asc');
