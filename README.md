@@ -10,6 +10,14 @@
 ## Technologies and frameworks:
     * JavaScript
     * NodeJS
+    <p>
+  <a href="https://nodejs.org/en">
+    <img src="./github/nodejs-logo.svg" alt="Node.js CSS" width="auto" height="70">
+  </a>
+  <a href="https://tailwindcss.com/#gh-dark-mode-only">
+    <img src="./.github/tailwind-logo-dark.svg" alt="Tailwind CSS" width="350" height="70">
+  </a>
+</p>
     * ReactJS
     * Docker
 
