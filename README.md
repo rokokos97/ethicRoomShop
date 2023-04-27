@@ -20,11 +20,37 @@
     Node.js® is a free, open-sourced, cross-platform JavaScript run-time environment—<br> that lets developers write command line tools and server-side scripts outside of a browser.
 </p>
 
-## ReactJS
+| [Docs](https://https://nodejs.org/en/docs) | [Downloads](https://nodejs.org/en/download) |
 
-    
-    
-    * Docker
+## ReactJS
+<p align="center"> 
+    <a href="https://react.dev/">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React.js logo" height="140">
+    </a>
+</p>
+
+<p align="center">  
+    The library for web and native user interfaces.
+</p>
+
+| [Docs](https://react.dev/learn) | [Quick start](https://react.dev/learn/installation) |
+
+## Docker
+
+<p align="center"> 
+    <a href="https://www.docker.com/">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg" alt="Docker logo" height="80">
+    </a>
+</p>
+
+<p align="center">  
+    Docker makes development efficient and predictable
+Docker takes away repetitive, mundane configuration tasks and is used throughout the development lifecycle for fast, easy and portable application development – desktop and cloud. Docker’s comprehensive end to end platform includes UIs, CLIs, APIs and security that are engineered to work together across the entire application delivery lifecycle.
+</p>
+
+| [Docs](https://docs.docker.com/) | [Quick start](https://www.docker.com/get-started/) |
+
+
 
 ## Libraries:
     * Axios
