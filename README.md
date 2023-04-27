@@ -88,7 +88,7 @@ bcrypt is a password-hashing function designed by Niels Provos and David Mazièr
 
 | [Docs](https://www.npmjs.com/package/bcrypt) |
 
-    * Chalk
+    ## Chalk
 <p align="center"> 
     <a href="https://www.npmjs.com/package/chalk">
         <img src="https://raw.githubusercontent.com/chalk/chalk/a370f468a43999e4397094ff5c3d17aadcc4860e/media/logo.svg" alt="CHALK logo" height="60">
