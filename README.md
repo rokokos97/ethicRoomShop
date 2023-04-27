@@ -7,7 +7,7 @@
     * Creating, editing and deleting items and storage it on server
     * Secure routing for admin page
 
-## Technologies and frameworks:
+# Technologies and frameworks:
 ## NodeJS
 
 <p align="center"> 
@@ -48,12 +48,26 @@
 Docker takes away repetitive, mundane configuration tasks and is used throughout the development lifecycle for fast, easy and portable application development – desktop and cloud. Docker’s comprehensive end to end platform includes UIs, CLIs, APIs and security that are engineered to work together across the entire application delivery lifecycle.
 </p>
 
-| [Docs](https://docs.docker.com/) | [Quick start](https://www.docker.com/get-started/) |
+| [Docs](https://docs.docker.com/) | [Quick Start](https://www.docker.com/get-started/) | [Video Tutorial](https://www.youtube.com/watch?v=n9uCgUzfeRQ)|
+
+
+# Libraries:
+## Axios
+<p align="center"> 
+    <a href="https://axios-http.com/">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Axios_%28computer_library%29_logo.svg" alt="AXIOS logo" height="60">
+    </a>
+</p>
+
+<p align="center">  
+    Promise based HTTP client for the browser and node.js
+Axios is a simple promise based HTTP client for the browser and node.js. Axios provides a simple to use library in a small package with a very extensible interface.
+</p>
+
+| [Docs](https://github.com/axios/axios) | [Quick Start](https://axios-http.com/docs/intro) | [Video Tutorial](https://www.youtube.com/watch?v=fDVhl3DGkD0)|
 
 
 
-## Libraries:
-    * Axios
     * Bootstrap
     * Bcrypt
     * Chalk
