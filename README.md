@@ -10,7 +10,7 @@
 ## Technologies and frameworks:
     * JavaScript
     * NodeJS
-    <p>
+<p>
   <a href="https://nodejs.org/en">
     <img src="./.github/node.js-logo.svg" alt="Node.js CSS" width="auto" height="70">
   </a>
