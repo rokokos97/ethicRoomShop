@@ -48,7 +48,7 @@
 Docker takes away repetitive, mundane configuration tasks and is used throughout the development lifecycle for fast, easy and portable application development – desktop and cloud. Docker’s comprehensive end to end platform includes UIs, CLIs, APIs and security that are engineered to work together across the entire application delivery lifecycle.
 </p>
 
-| [Docs](https://docs.docker.com/) | [Quick Start](https://www.docker.com/get-started/) | [Video Tutorial](https://www.youtube.com/watch?v=n9uCgUzfeRQ)|
+| [Docs](https://docs.docker.com/) | [Quick Start](https://www.docker.com/get-started/) | [Video Tutorial](https://www.youtube.com/watch?v=n9uCgUzfeRQ) |
 
 
 # Libraries:
@@ -64,12 +64,34 @@ Docker takes away repetitive, mundane configuration tasks and is used throughout
 Axios is a simple promise based HTTP client for the browser and node.js. Axios provides a simple to use library in a small package with a very extensible interface.
 </p>
 
-| [Docs](https://github.com/axios/axios) | [Quick Start](https://axios-http.com/docs/intro) | [Video Tutorial](https://www.youtube.com/watch?v=fDVhl3DGkD0)|
+| [Docs](https://github.com/axios/axios) | [Quick Start](https://axios-http.com/docs/intro) | [Video Tutorial](https://www.youtube.com/watch?v=fDVhl3DGkD0) |
 
+## Bootstrap 5
+<p align="center"> 
+    <a href="https://getbootstrap.com/">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg" alt="Bootstrap logo" height="60">
+    </a>
+</p>
+Bootstrap is a powerful, feature-packed frontend toolkit. Build anything—from prototype to production—in minutes.
+<p align="center">  
+    
+</p>
 
+| [Docs](https://getbootstrap.com/docs/5.3/getting-started/introduction/) | [Quick Start](https://getbootstrap.com/docs/5.3/getting-started/introduction/) | 
 
-    * Bootstrap
     * Bcrypt
+<p align="center"> 
+    <a href="">
+        <img src="" alt="logo" height="60">
+    </a>
+</p>
+
+<p align="center">  
+
+</p>
+
+| [Docs]() | [Quick Start]() | [Video Tutorial]() |
+
     * Chalk
     * Config
     * Cors
