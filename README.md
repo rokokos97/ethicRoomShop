@@ -200,40 +200,30 @@ A tiny, secure, URL-friendly, unique string ID generator for JavaScript.
 React Router is a lightweight, fully-featured routing library for the React JavaScript library. React Router runs everywhere that React runs; on the web, on the server (using node.js), and on React Native.
 </p>
 
-| [Docs]() | [Quick Start]() |
+| [Docs](https://reactrouter.com/en/main/start/tutorial) 
     
-## React-Tostify
-<p align="center"> 
-    <a href="">
-        <img src="" alt="logo" height="60">
-    </a>
-</p>
+## React-Toastify
 <p align="center">  
-
+ React-Toastify allows you to add notifications to your app with ease. No more nonsense!
 </p>
 
-| [Docs]() | [Quick Start]() |
+| [Docs](https://github.com/fkhadra/react-toastify#readme) | 
     
 ## Redux
 <p align="center"> 
-    <a href="">
-        <img src="" alt="logo" height="60">
+    <a href="https://redux.js.org/">
+        <img src="https://cdn.worldvectorlogo.com/logos/redux.svg" alt="logo" height="60">
     </a>
 </p>
 <p align="center">  
-
+A Predictable State Container for JS Apps
 </p>
 
-| [Docs]() | [Quick Start]() |
+| [User Guide](https://redux.js.org/usage/) | [Quick Start](https://redux.js.org/introduction/getting-started) |
     
 ## Yup
-<p align="center"> 
-    <a href="">
-        <img src="" alt="logo" height="60">
-    </a>
-</p>
 <p align="center">  
-
+Yup is a schema builder for runtime value parsing and validation. Define a schema, transform a value to match, assert the shape of an existing value, or both. Yup schema are extremely expressive and allow modeling complex, interdependent validations, or value transformation.
 </p>
 
-| [Docs]() | [Quick Start]() |
+| [Quick Start](https://www.npmjs.com/package/yup) |
