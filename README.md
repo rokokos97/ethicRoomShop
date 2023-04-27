@@ -8,18 +8,21 @@
     * Secure routing for admin page
 
 ## Technologies and frameworks:
-    * JavaScript
-    * NodeJS
-<p align="center">
-  <a href="https://nodejs.org/">
-    <img src="https://raw.githubusercontent.com/nodejs/nodejs.org/main/public/static/images/logo-hexagon.svg" alt="Node.js logo" height="140">
-  </a>
-</p>
+    ## NodeJS
 
-<p align="center">
-  Node.js® is a free, open-sourced, cross-platform JavaScript run-time environment—<br> that lets developers write command line tools and server-side scripts outside of a browser.
-</p>
-    * ReactJS
+    <p align="center">
+      <a href="https://nodejs.org/">
+        <img src="https://raw.githubusercontent.com/nodejs/nodejs.org/main/public/static/images/logo-hexagon.svg" alt="Node.js logo" height="140">
+      </a>
+    </p>
+    
+    <p align="center">
+      Node.js® is a free, open-sourced, cross-platform JavaScript run-time environment—<br> that lets developers write command line tools and server-side scripts outside of a browser.
+    </p>
+
+    ## ReactJS
+    
+    
     * Docker
 
 ## Libraries:
