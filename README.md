@@ -79,7 +79,28 @@ Bootstrap is a powerful, feature-packed frontend toolkit. Build anything—from 
 
 | [Docs](https://getbootstrap.com/docs/5.3/getting-started/introduction/) | [Quick Start](https://getbootstrap.com/docs/5.3/getting-started/introduction/) | 
 
-    * Bcrypt
+## Bcrypt
+<p align="center">  
+bcrypt is a password-hashing function designed by Niels Provos and David Mazières, based on the Blowfish cipher and presented at USENIX in 1999.[1] Besides incorporating a salt to protect against rainbow table attacks, bcrypt is an adaptive function: over time, the iteration count can be increased to make it slower, so it remains resistant to brute-force search attacks even with increasing computation power.
+
+
+</p>
+
+| [Docs](https://www.npmjs.com/package/bcrypt) |
+
+    * Chalk
+<p align="center"> 
+    <a href="https://www.npmjs.com/package/chalk">
+        <img src="https://raw.githubusercontent.com/chalk/chalk/a370f468a43999e4397094ff5c3d17aadcc4860e/media/logo.svg" alt="CHALK logo" height="60">
+    </a>
+</p>
+    Colorize your console output!
+<p align="center">  
+
+</p>
+
+| [Docs](https://www.npmjs.com/package/chalk) | [Quick Start](https://www.npmjs.com/package/chalk) | [Video Tutorial](https://www.youtube.com/watch?v=czsc2rsS3NY) |
+    * Config
 <p align="center"> 
     <a href="">
         <img src="" alt="logo" height="60">
@@ -91,14 +112,57 @@ Bootstrap is a powerful, feature-packed frontend toolkit. Build anything—from 
 </p>
 
 | [Docs]() | [Quick Start]() | [Video Tutorial]() |
-
-    * Chalk
-    * Config
     * Cors
+<p align="center"> 
+    <a href="">
+        <img src="" alt="logo" height="60">
+    </a>
+</p>
+
+<p align="center">  
+
+</p>
+
+| [Docs]() | [Quick Start]() | [Video Tutorial]() |
     * Eslint
+<p align="center"> 
+    <a href="">
+        <img src="" alt="logo" height="60">
+    </a>
+</p>
+
+<p align="center">  
+
+</p>
+
+| [Docs]() | [Quick Start]() | [Video Tutorial]() |
     * Express
+<p align="center"> 
+    <a href="">
+        <img src="" alt="logo" height="60">
+    </a>
+</p>
+
+<p align="center">  
+
+</p>
+
+| [Docs]() | [Quick Start]() | [Video Tutorial]() |
     * Express-validator
     * Jsonwebtoken
+<p align="center"> 
+    <a href="https://jwt.io/">
+        <img src="https://jwt.io/img/pic_logo.svg" alt="logo" height="60">
+    </a>
+</p>
+JSON Web Tokens are an open, industry standard RFC 7519 method for representing claims securely between two parties.
+
+JWT.IO allows you to decode, verify and generate JWT.
+<p align="center">  
+
+</p>
+
+| [Docs](https://www.npmjs.com/package/jsonwebtoken) |
     * Lodash
     * Mongoose
     * Nanoid
