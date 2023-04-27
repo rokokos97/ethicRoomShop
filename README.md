@@ -1,6 +1,6 @@
 # `About App`
 
-## This is my education project [http://ethic-room.shop](http://ethic-room.shop/). It is Full-stack project (ReactJs + NodeJs). In this application implemented, next parts :
+### This is my education project [http://ethic-room.shop](http://ethic-room.shop/). It is Full-stack project (ReactJs + NodeJs). In this application implemented, next parts :
     * Filtration/Searching/Sorting items list
     * Registration and authorization of users on Front-End and Back-End
     * Validation form
@@ -15,7 +15,6 @@
         <img src="https://raw.githubusercontent.com/nodejs/nodejs.org/main/public/static/images/logo-hexagon.svg" alt="Node.js logo" height="140">
     </a>
 </p>
-    
 <p align="center">  
     Node.js® is a free, open-sourced, cross-platform JavaScript run-time environment—<br> that lets developers write command line tools and server-side scripts outside of a browser.
 </p>
@@ -28,7 +27,6 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React.js logo" height="140">
     </a>
 </p>
-
 <p align="center">  
     The library for web and native user interfaces.
 </p>
@@ -36,13 +34,11 @@
 | [Docs](https://react.dev/learn) | [Quick start](https://react.dev/learn/installation) |
 
 ## Docker
-
 <p align="center"> 
     <a href="https://www.docker.com/">
         <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg" alt="Docker logo" height="80">
     </a>
 </p>
-
 <p align="center">  
     Docker makes development efficient and predictable
 Docker takes away repetitive, mundane configuration tasks and is used throughout the development lifecycle for fast, easy and portable application development – desktop and cloud. Docker’s comprehensive end to end platform includes UIs, CLIs, APIs and security that are engineered to work together across the entire application delivery lifecycle.
@@ -52,16 +48,16 @@ Docker takes away repetitive, mundane configuration tasks and is used throughout
 
 
 # Libraries:
+
 ## Axios
 <p align="center"> 
     <a href="https://axios-http.com/">
         <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Axios_%28computer_library%29_logo.svg" alt="AXIOS logo" height="60">
     </a>
 </p>
-
 <p align="center">  
     Promise based HTTP client for the browser and node.js
-Axios is a simple promise based HTTP client for the browser and node.js. Axios provides a simple to use library in a small package with a very extensible interface.
+    Axios is a simple promise based HTTP client for the browser and node.js. Axios provides a simple to use library in a small package with a very extensible interface.
 </p>
 
 | [Docs](https://github.com/axios/axios) | [Quick Start](https://axios-http.com/docs/intro) | [Video Tutorial](https://www.youtube.com/watch?v=fDVhl3DGkD0) |
@@ -72,18 +68,15 @@ Axios is a simple promise based HTTP client for the browser and node.js. Axios p
         <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg" alt="Bootstrap logo" height="60">
     </a>
 </p>
-Bootstrap is a powerful, feature-packed frontend toolkit. Build anything—from prototype to production—in minutes.
 <p align="center">  
-    
+    Bootstrap is a powerful, feature-packed frontend toolkit. Build anything—from prototype to production—in minutes.
 </p>
 
 | [Docs](https://getbootstrap.com/docs/5.3/getting-started/introduction/) | [Quick Start](https://getbootstrap.com/docs/5.3/getting-started/introduction/) | 
 
 ## Bcrypt
 <p align="center">  
-bcrypt is a password-hashing function designed by Niels Provos and David Mazières, based on the Blowfish cipher and presented at USENIX in 1999.[1] Besides incorporating a salt to protect against rainbow table attacks, bcrypt is an adaptive function: over time, the iteration count can be increased to make it slower, so it remains resistant to brute-force search attacks even with increasing computation power.
-
-
+Bcrypt is a password-hashing function designed by Niels Provos and David Mazières, based on the Blowfish cipher and presented at USENIX in 1999.[1] Besides incorporating a salt to protect against rainbow table attacks, bcrypt is an adaptive function: over time, the iteration count can be increased to make it slower, so it remains resistant to brute-force search attacks even with increasing computation power.
 </p>
 
 | [Docs](https://www.npmjs.com/package/bcrypt) |
@@ -94,62 +87,59 @@ bcrypt is a password-hashing function designed by Niels Provos and David Mazièr
         <img src="https://raw.githubusercontent.com/chalk/chalk/a370f468a43999e4397094ff5c3d17aadcc4860e/media/logo.svg" alt="CHALK logo" height="60">
     </a>
 </p>
+<p align="center">  
     Colorize your console output!
-<p align="center">  
-
 </p>
 
-| [Docs](https://www.npmjs.com/package/chalk) | [Quick Start](https://www.npmjs.com/package/chalk) | [Video Tutorial](https://www.youtube.com/watch?v=czsc2rsS3NY) |
-    * Config
+| [Docs](https://www.npmjs.com/package/chalk) | [Quick Start](https://www.npmjs.com/package/chalk) | [Video Tutorial](https://www.youtube.com/watch?v=czsc2rsS3NY) | 
+
+## Config
+<p align="center">  
+Node-config organizes hierarchical configurations for your app deployments.
+</p>
+
+| [Docs](https://www.npmjs.com/package/config) |
+    
+## Cors
+<p align="center">  
+    CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
+</p>
+
+| [Docs](https://www.npmjs.com/package/cors) |
+
+## Eslint
+
 <p align="center"> 
-    <a href="">
-        <img src="" alt="logo" height="60">
+    <a href="https://eslint.org/">
+        <img src="https://www.vectorlogo.zone/logos/eslint/eslint-ar21.svg" alt="ESLint logo" height="60">
     </a>
 </p>
-
+ESLint statically analyzes your code to quickly find problems. It is built into most text editors and you can run ESLint as part of your continuous integration pipeline.
 <p align="center">  
 
 </p>
 
-| [Docs]() | [Quick Start]() | [Video Tutorial]() |
-    * Cors
+| [Docs](https://eslint.org/docs/latest/) | [Quick Start](https://eslint.org/docs/latest/use/getting-started) |
+    
+## Express
 <p align="center"> 
-    <a href="">
-        <img src="" alt="logo" height="60">
+    <a href="https://expressjs.com/">
+        <img src="https://www.vectorlogo.zone/logos/expressjs/expressjs-ar21.svg" alt="Express logo" height="60">
     </a>
 </p>
-
 <p align="center">  
-
+Express is a flexible and lightweight Node.js web application framework that provides a set of advanced features for web and mobile applications.
 </p>
 
-| [Docs]() | [Quick Start]() | [Video Tutorial]() |
-    * Eslint
-<p align="center"> 
-    <a href="">
-        <img src="" alt="logo" height="60">
-    </a>
-</p>
+| [Docs](https://expressjs.com/en/guide/routing.html) |
 
+## Express-validator
 <p align="center">  
-
+Express-validator is a set of express.js middlewares that wraps the extensive collection of validators and sanitizers offered by validator.js.
 </p>
 
-| [Docs]() | [Quick Start]() | [Video Tutorial]() |
-    * Express
-<p align="center"> 
-    <a href="">
-        <img src="" alt="logo" height="60">
-    </a>
-</p>
-
-<p align="center">  
-
-</p>
-
-| [Docs]() | [Quick Start]() | [Video Tutorial]() |
-    * Express-validator
-    * Jsonwebtoken
+| [Docs](https://www.npmjs.com/package/express-validator) |
+## Jsonwebtoken
 <p align="center"> 
     <a href="https://jwt.io/">
         <img src="https://jwt.io/img/pic_logo.svg" alt="logo" height="60">
@@ -163,29 +153,99 @@ JWT.IO allows you to decode, verify and generate JWT.
 </p>
 
 | [Docs](https://www.npmjs.com/package/jsonwebtoken) |
-    * Lodash
-    * Mongoose
-    * Nanoid
-    * Path
-    * React-Router@6
-    * React-Rostify
-    * Redux
-    * Yup
 
-# Getting Started with Create React App
+## Lodash
+<p align="center"> 
+    <a href="https://lodash.com/">
+        <img src="https://www.vectorlogo.zone/logos/lodash/lodash-ar21.svg" alt="logo" height="60">
+    </a>
+</p>
+<p align="center">  
+    A modern JavaScript utility library delivering modularity, performance & extras.
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+| [Docs](https://lodash.com/docs/4.17.15) |
 
-## Available Scripts
+## Mongoose
+<p align="center"> 
+    <a href="https://mongoosejs.com/">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqv86vz-hwyPmIqd0X_QNcEuxQbdKUkcLblD7Pi0kHaw&s" alt="logo" height="60">
+    </a>
+</p>
+<p align="center">  
+elegant mongodb object modeling for node.js
+</p>
 
-In the project directory, you can run:
+| [Docs](https://mongoosejs.com/docs/guide.html) |
 
-* `npm start`
+## Nanoid
+<p align="center"> 
+    <a href="https://www.npmjs.com/package/nanoid">
+        <img src="https://camo.githubusercontent.com/c306d97014be1caa9a2a511a0ff4722d54a77b0b6c81a18c81113d6051408325/68747470733a2f2f61692e6769746875622e696f2f6e616e6f69642f6c6f676f2e737667" alt="logo" height="60">
+    </a>
+</p>
+<p align="center">  
+A tiny, secure, URL-friendly, unique string ID generator for JavaScript.
+</p>
 
-Runs the app in the development mode.\
-Run "npm run serve" in console;
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+| [Docs](https://www.npmjs.com/package/nanoid) |
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Path
+<p align="center"> 
+    <a href="">
+        <img src="" alt="logo" height="60">
+    </a>
+</p>
+<p align="center">  
 
+</p>
+
+| [Docs]() | [Quick Start]() |
+
+## React-Router@6
+<p align="center"> 
+    <a href="">
+        <img src="" alt="logo" height="60">
+    </a>
+</p>
+<p align="center">  
+
+</p>
+
+| [Docs]() | [Quick Start]() |
+    
+## React-Tostify
+<p align="center"> 
+    <a href="">
+        <img src="" alt="logo" height="60">
+    </a>
+</p>
+<p align="center">  
+
+</p>
+
+| [Docs]() | [Quick Start]() |
+    
+## Redux
+<p align="center"> 
+    <a href="">
+        <img src="" alt="logo" height="60">
+    </a>
+</p>
+<p align="center">  
+
+</p>
+
+| [Docs]() | [Quick Start]() |
+    
+## Yup
+<p align="center"> 
+    <a href="">
+        <img src="" alt="logo" height="60">
+    </a>
+</p>
+<p align="center">  
+
+</p>
+
+| [Docs]() | [Quick Start]() |
