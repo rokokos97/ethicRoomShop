@@ -1,12 +1,11 @@
-# `About App`
 
-### This is my education project [http://ethic-room.shop](http://ethic-room.shop/). It is Full-stack project (ReactJs + NodeJs). In this application implemented, next parts :
-    * Filtration/Searching/Sorting items list
-    * Registration and authorization of users on Front-End and Back-End
-    * Validation form
-    * Creating, editing and deleting items and storage it on server
-    * Secure routing for admin page
-
+## This is my pat-project. It's a Ukrainian clothing brand  [Ethic-room](https://www.instagram.com/ethic_room/).  [http://ethic-room.shop](http://ethic-room.shop/) project is in progress.
+### It is Full-stack project (ReactJs + NodeJs). In this application implemented, next parts :
+     Filtration/Searching/Sorting items list
+     Registration and authorization of users on Front-End and Back-End
+     Validation form
+     Creating, editing and deleting items and storage it on server
+     Secure routing for admin page
 # Technologies and frameworks:
 ## NodeJS
 
@@ -44,7 +43,7 @@
 Docker takes away repetitive, mundane configuration tasks and is used throughout the development lifecycle for fast, easy and portable application development – desktop and cloud. Docker’s comprehensive end to end platform includes UIs, CLIs, APIs and security that are engineered to work together across the entire application delivery lifecycle.
 </p>
 
-| [Docs](https://docs.docker.com/) | [Quick Start](https://www.docker.com/get-started/) | [Video Tutorial](https://www.youtube.com/watch?v=n9uCgUzfeRQ) |
+| [Docs](https://docs.docker.com/) | [Quick Start](https://docs.docker.com/get-started/) | [Video Tutorial](https://www.youtube.com/watch?v=n9uCgUzfeRQ) |
 
 
 # Libraries:

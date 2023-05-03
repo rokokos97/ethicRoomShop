@@ -80,7 +80,6 @@ const ItemsListPage = () => {
                 onItemSelect={handleCategorySelect}
                 onClear={handleClear}
               />
-
             </div>
             <ul
               className="d-flex flex-wrap list-unstyled justify-content-center"
