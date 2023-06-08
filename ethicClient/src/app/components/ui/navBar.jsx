@@ -4,20 +4,24 @@ import {NavLink} from 'react-router-dom';
 
 import {getIsLoggedIn} from '../../store/user';
 import NavProfile from './navProfile';
+import SearchBlock from '../common/searchBlock';
 const NavBar = () => {
   const isLoggedIn = useSelector(getIsLoggedIn());
   return (
     <nav className="navbar bg-light mb-3">
       <div className="container-fluid">
         <ul className="nav">
-          <li className="nav-item">
+          <li>
             <NavLink className="nav-link link-dark " aria-current="page" to="/">
-              <h3>ETHIC</h3>
+              <div>ETHIC</div>
             </NavLink>
           </li>
         </ul>
         <div className="d-flex">
           <ul className="nav">
+            <li>
+              <SearchBlock/>
+            </li>
             {isLoggedIn &&
                           <li className="nav-item">
                             <NavLink
@@ -58,7 +62,7 @@ const NavBar = () => {
                                 aria-current="page"
                                 to="/login"
                               >
-                                  LOG IN
+                                <i className="bi bi-person"></i>
                               </NavLink>
                             )}
             </li>

@@ -1,4 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300&display=swap');
-body {
-    font-family: 'Red Hat Mono', monospace;
+@font-face {
+    font-family: 'Rund-Regular', sans-serif ;
+    src: url('app/fonts/Rund/RundTextTRIAL-Regular.otf') format('truetype');
 }
+html {
+    font-size: 10px;
+}
+body {
+    /*font-family: 'Red Hat Mono', monospace;*/
+    font-family: 'Rund-Regular', sans-serif;
+}
+/*.active {*/
+/*    color: gray;*/
+/*}*/
