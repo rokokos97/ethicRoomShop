@@ -8,7 +8,7 @@ const Main = () => {
     <div>
       <CarouselBox/>
       <ItemsListPage/>
-      <Footer/>
+      <Footer class/>
     </div>
   );
 };

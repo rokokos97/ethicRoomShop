@@ -6,7 +6,9 @@
     "category":"6433317b36de620b0f4c5190",
     "description":"Dress with transformer chains",
     "composition":"polyester: 100%",
-    "image":"/upload/transform-dress.jpg"
+    "image":"/upload/transform-dress.jpg",
+    "size": "",
+    "favorite": false
   },
   {
     "_id":"643c738c76cfd1ee8082eece",
@@ -15,7 +17,9 @@
     "category":"6433317b36de620b0f4c5193",
     "description":"Long kimono with embroidery",
     "composition":"viscose: 50%  linen: 50%",
-    "image":"/upload/dark-kimono.jpg"
+    "image":"/upload/dark-kimono.jpg",
+    "size": "",
+    "favorite": false
     },
   {
     "_id": "643c7626f4073d76a4505f24",
@@ -24,7 +28,9 @@
     "category": "6433317b36de620b0f4c5194",
     "description": "T-shirt with fun embroidery",
     "composition": "Cotton: 98%  Elastane: 2%",
-    "image": "/upload/tshirts.jpg"
+    "image": "/upload/tshirts.jpg",
+    "size": "",
+    "favorite": false
   },
   {
     "_id":"643c77768a2b1deff704c770",
@@ -33,7 +39,9 @@
     "category":"6433317b36de620b0f4c5195",
     "description":"Warm clothes for cold winter",
     "composition":"cashmere: 100%",
-    "image":"/upload/body.jpg"
+    "image":"/upload/body.jpg",
+    "size": "",
+    "favorite": false
   },
   {
     "_id":"643c7b3fecd0c6f15b0d84ba",
@@ -42,7 +50,9 @@
     "category":"6433317b36de620b0f4c5192",
     "description":"Make your mood with our tiger",
     "composition":"Cotton: 100%",
-    "image":"/upload/hoodies.jpg"
+    "image":"/upload/hoodies.jpg",
+    "size": "",
+    "favorite": false
     },
   {
     "_id":"643c7bca3ed44f48d91e10d7",
@@ -51,7 +61,9 @@
     "category":"6433317b36de620b0f4c5191",
     "description":"Pants for every day and any weather",
     "composition":"viscose: 50%  linen: 50%",
-    "image":"/upload/pants.jpg"
+    "image":"/upload/pants.jpg",
+    "size": "",
+    "favorite": false
     },
   {
     "_id":"643c7d74a02b2f4290b014a0",

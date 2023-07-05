@@ -4,7 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e15e4bf-ffda-4885-9dda-3f22f4c4da4a" name="Changes" comment="client: create typeScript project" />
+    <list default="true" id="5e15e4bf-ffda-4885-9dda-3f22f4c4da4a" name="Changes" comment="client: install tailwind css">
+      <change afterPath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/components/item.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/fonts/Rund/RundDisplayTRIAL-Black.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/fonts/Rund/RundDisplayTRIAL-Bold.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/fonts/Rund/RundDisplayTRIAL-ExtraBold.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/fonts/Rund/RundDisplayTRIAL-Light.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/fonts/Rund/RundDisplayTRIAL-Medium.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/fonts/Rund/RundDisplayTRIAL-Regular.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/fonts/Rund/RundDisplayTRIAL-SemiBold.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/fonts/Rund/RundDisplayTRIAL-Thin.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/fonts/Rund/RundTextTRIAL-Black.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/fonts/Rund/RundTextTRIAL-BlackItalic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/fonts/Rund/RundTextTRIAL-Bold.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/fonts/Rund/RundTextTRIAL-BoldItalic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/fonts/Rund/RundTextTRIAL-ExtraBold.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/fonts/Rund/RundTextTRIAL-ExtraBoldItalic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/fonts/Rund/RundTextTRIAL-Italic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/fonts/Rund/RundTextTRIAL-Light.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/fonts/Rund/RundTextTRIAL-LightItalic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/fonts/Rund/RundTextTRIAL-Medium.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/fonts/Rund/RundTextTRIAL-MediumItalic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/fonts/Rund/RundTextTRIAL-Regular.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/fonts/Rund/RundTextTRIAL-SemiBold.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/fonts/Rund/RundTextTRIAL-SemiBoldItalic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/fonts/Rund/RundTextTRIAL-Thin.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/fonts/Rund/RundTextTRIAL-ThinItalic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/fonts/Rund/_LicenseAgreement.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicClient/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ethicClient/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicClient/src/app/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/ethicClient/src/app/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicClient/src/app/components/ui/footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/ethicClient/src/app/components/ui/footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicClient/src/app/components/ui/registerForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/ethicClient/src/app/components/ui/registerForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicClient/src/app/layouts/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/ethicClient/src/app/layouts/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicRoomClientTypeScript/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethicServer/mock/items.json" beforeDir="false" afterPath="$PROJECT_DIR$/ethicServer/mock/items.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,27 +94,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/rokokos97/WebstormProjects/ethic-room/ethicClient/src/app/components/ui",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/rokokos97/WebstormProjects/ethic-room&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/rokokos97/WebstormProjects/ethic-room/ethicRoomClientTypeScript/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ethicRoomClientTypeScript/src" />
       <recent name="$PROJECT_DIR$/ethicClient/src/app/components/ui" />
       <recent name="$PROJECT_DIR$/ethicClient/src/app/components/common" />
       <recent name="$PROJECT_DIR$/ethicClient/fonts" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/.gitsvg" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/ethicClient/src/app" />
@@ -119,7 +159,26 @@
       <workItem from="1685345208459" duration="3759000" />
       <workItem from="1685367528705" duration="796000" />
       <workItem from="1685455917302" duration="1288000" />
-      <workItem from="1686225331479" duration="8096000" />
+      <workItem from="1686225331479" duration="8701000" />
+      <workItem from="1686246380084" duration="3078000" />
+      <workItem from="1687179199667" duration="709000" />
+      <workItem from="1687183178339" duration="598000" />
+      <workItem from="1687295678688" duration="12000" />
+      <workItem from="1687422772504" duration="4723000" />
+      <workItem from="1687514445028" duration="1852000" />
+      <workItem from="1687517496672" duration="614000" />
+      <workItem from="1687964432499" duration="1577000" />
+      <workItem from="1688121878150" duration="617000" />
+      <workItem from="1688198538486" duration="624000" />
+      <workItem from="1688200443220" duration="10000" />
+      <workItem from="1688200586122" duration="11000" />
+      <workItem from="1688203171504" duration="2472000" />
+      <workItem from="1688210503293" duration="2499000" />
+      <workItem from="1688220733621" duration="678000" />
+      <workItem from="1688250953595" duration="13999000" />
+      <workItem from="1688317970264" duration="598000" />
+      <workItem from="1688336241627" duration="125000" />
+      <workItem from="1688373923896" duration="4899000" />
     </task>
     <task id="LOCAL-00001" summary="final correcting">
       <created>1681893225408</created>
@@ -338,7 +397,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686244072239</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="client: install tailwind css">
+      <created>1686245840732</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1686245840732</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,6 +426,7 @@
     <MESSAGE value="production" />
     <MESSAGE value="readme.md" />
     <MESSAGE value="client: create typeScript project" />
-    <option name="LAST_COMMIT_MESSAGE" value="client: create typeScript project" />
+    <MESSAGE value="client: install tailwind css" />
+    <option name="LAST_COMMIT_MESSAGE" value="client: install tailwind css" />
   </component>
 </project>

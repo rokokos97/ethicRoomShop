@@ -48,7 +48,8 @@ const RegisterForm = () => {
         .max(16, 'Password hasn\'t\' to be longer than 16 characters'),
     email: yup.string()
         .required('Email is required')
-        .email('Email is not correct'),
+        .matches(/^[\w.-]+@[a-zA-Z_-]+?(?:\.[a-zA-Z]{2,6})+$/,
+            'Email is not correct'),
     name: yup.string()
         .required('Name is requires')
         .min(3, 'Name must be at least 3 characters long'),
